@@ -10,4 +10,4 @@ Just found a simple and accurate definition in Go Course Day 2:
 
 > Concurrency is a property of the problem. Parallel execution is when the concurrent parts are executed at the same time on separate processes.
 
- I cannot find original slides on <golang.org> though.
+ I cannot find original slides on <http://golang.org> though.
