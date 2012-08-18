@@ -9,7 +9,7 @@ footer: true
 
 I am Yuanxuan Wang (王远轩), a master's student in Fudan University, Shanghai, China.
 
-Links:
+## Links
 
 - [My Chinese blog](blog.yxwang.me)
 - [GitHub](github.com/zellux)
