@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Order of different formats in response_to does matter"
+title: "Order of Formats in response_to Does Matter"
 date: 2012-08-17 19:48
 comments: true
 categories: [Rails]
 ---
 
-For example, the following code snippet works well for most browsers:
+The following code snippet works well for most browsers:
 
 {% codeblock lang:ruby %}
 respond_to do |format|
@@ -15,6 +15,6 @@ respond_to do |format|
 end
 {% endcodeblock %}
 
-But some browsers, especially embedded webkit components, may set ContentType to `*/*` in request headers. In this case, they will get JSON data instead of HTML if they do not explicitly specify .html format.
+But some browsers, especially embedded webkit components, may set ContentType to `*/*` in request headers. In this case, they will get JSON data instead of HTML if they do not explicitly specify .html format in URL.
 
-So as long as it is not intended, put format.html before format.json will always be a better choice.
+So as long as it is not intended, putting format.html before format.json will always be a better choice.

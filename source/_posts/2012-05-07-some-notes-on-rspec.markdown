@@ -8,14 +8,11 @@ categories: [RSpec, Rails]
 
 ### Stubbing instance methods
 
-The method `any_instance` allows stubbing instance methods easily. For example, by calling
+The method `any_instance` allows stubbing instance methods easily. For example, the following line will force calling Item#price to return 10 always:
 
 {% codeblock lang:ruby %}
 Item.any_instance.stub(:price).and_return(10)
 {% endcodeblock %}
-
-You can make result of calling Item#price to 10.
-
 
 ### Stubbing in helper specs
 

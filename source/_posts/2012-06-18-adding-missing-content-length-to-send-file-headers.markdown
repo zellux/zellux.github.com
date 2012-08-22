@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Adding Missing Content-Length to send_file Headers"
+title: "Adding Content-Length to send_file Headers"
 date: 2012-06-18 19:52
 comments: true
 categories: [Rails]
