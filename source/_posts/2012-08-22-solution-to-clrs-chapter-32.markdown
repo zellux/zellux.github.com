@@ -1,0 +1,25 @@
+---
+layout: post
+title: "Solutions to CLRS Chapter 32.1"
+date: 2012-08-22 22:22
+comments: true
+categories: [Algorithms]
+---
+
+## Problem 32.1-2
+
+> Suppose that all characters in the pattern P are different. Show how to accelerate NAIVE-STRING-MATCHER to run in time O(n) on an n-character text T .
+
+When T[i] and P[j] mismatches in NAIVE-STRING-MATCHER, we can skip all characters before T[i] and begin new matching from T[i + 1] with P[1].
+
+## Problem 32.1-4
+
+> 	Suppose we allow the pattern P to contain occurrences of a gap character ◇ that can match an arbitrary string of characters (even one of zero length). Note that the gap character may occur an arbitrary number of times in the pattern but not at all in the text. Give a polynomial-time algorithm to determine whether such a pattern P occurs in a given text T , and analyze the running time of your algorithm.
+
+We can solve this problem using dynamic programming. Assume we have function F(T<sub>i</sub>, P<sub>j</sub>), which defines whether the subpattern P<sub>j</sub> matches T<sub>i</sub>, and its value can be deducted from three sub-problems:
+
+1. P[j] == ◇ AND F(T<sub>i-1</sub>, P<sub>j</sub>)
+2. P[j] == ◇ AND F(T<sub>i</sub>, P<sub>j-1</sub>)
+3. F(T<sub>i-1</sub>, P<sub>j-1</sub>)
+
+F(T<sub>i</sub>, P<sub>j</sub>) is true, if and only if any of the above statements is true. The problem can thus be sovled in O(n ^ 2) in a bottom-up way.
