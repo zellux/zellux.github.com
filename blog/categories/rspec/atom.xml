@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: RSpec | 50a23bb7]]></title>
+  <link href="http://zellux.github.com/blog/categories/rspec/atom.xml" rel="self"/>
+  <link href="http://zellux.github.com/"/>
+  <updated>2012-09-01T00:26:39+08:00</updated>
+  <id>http://zellux.github.com/</id>
+  <author>
+    <name><![CDATA[zellux]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Some Notes on RSpec]]></title>
+    <link href="http://zellux.github.com/blog/2012/05/some-notes-on-rspec/"/>
+    <updated>2012-05-07T15:40:00+08:00</updated>
+    <id>http://zellux.github.com/blog/2012/05/some-notes-on-rspec</id>
+    <content type="html"><![CDATA[<h3>Stubbing instance methods</h3>
+
+<p>The method <code>any_instance</code> allows stubbing instance methods easily. For example, the following line will force calling Item#price to return 10 always:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Item</span><span class="o">.</span><span class="n">any_instance</span><span class="o">.</span><span class="n">stub</span><span class="p">(</span><span class="ss">:price</span><span class="p">)</span><span class="o">.</span><span class="n">and_return</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>Stubbing in helper specs</h3>
+
+<p>Stubbing in helper specs is similar to stubbing in controller specs. Just remember to add <code>helper.</code> before every helper method call.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">it</span> <span class="s1">&#39;test current user&#39;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">helper</span><span class="o">.</span><span class="n">stub</span><span class="p">(</span><span class="ss">:current_user</span><span class="p">)</span><span class="o">.</span><span class="n">and_return</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">helper</span><span class="o">.</span><span class="n">user_avatar</span><span class="o">.</span><span class="n">should_not</span> <span class="n">be_empty</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<h3>let and let!</h3>
+
+<p>Variables defined by <code>let</code> is evaluated in a lazy way. Use <code>let!</code> to force the evaluation before each spec.</p>
+]]></content>
+  </entry>
+  
+</feed>

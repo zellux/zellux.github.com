@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Mac | 50a23bb7]]></title>
+  <link href="http://zellux.github.com/blog/categories/mac/atom.xml" rel="self"/>
+  <link href="http://zellux.github.com/"/>
+  <updated>2012-09-01T00:26:39+08:00</updated>
+  <id>http://zellux.github.com/</id>
+  <author>
+    <name><![CDATA[zellux]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Fixing ImageMagick crash issues on Mac OS X]]></title>
+    <link href="http://zellux.github.com/blog/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/"/>
+    <updated>2012-02-23T16:04:00+08:00</updated>
+    <id>http://zellux.github.com/blog/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x</id>
+    <content type="html"><![CDATA[<p>ImageMagick may be prone to crash on Mac OS X, and it can be avoided by disabling OpenMP when compile the library:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>brew install -f imagemagick --disable-openmp</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

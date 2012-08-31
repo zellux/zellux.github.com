@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Database | 50a23bb7]]></title>
+  <link href="http://zellux.github.com/blog/categories/database/atom.xml" rel="self"/>
+  <link href="http://zellux.github.com/"/>
+  <updated>2012-09-01T00:26:39+08:00</updated>
+  <id>http://zellux.github.com/</id>
+  <author>
+    <name><![CDATA[zellux]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Finding out the encoding of a MySQL Database]]></title>
+    <link href="http://zellux.github.com/blog/2012/03/finding-out-the-encoding-of-a-mysql-database/"/>
+    <updated>2012-03-23T09:45:00+08:00</updated>
+    <id>http://zellux.github.com/blog/2012/03/finding-out-the-encoding-of-a-mysql-database</id>
+    <content type="html"><![CDATA[<p>Find out the encoding of a MySQL database:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SHOW VARIABLES LIKE 'character_set_%';</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Find out the encoding of a specific table:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>SHOW CREATE TABLE table_name;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>
