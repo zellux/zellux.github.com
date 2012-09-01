@@ -4,7 +4,6 @@ title: "Successor with Delete"
 date: 2012-08-30 10:05
 comments: true
 categories: [Algorithms]
-published: false
 ---
 
 ## Problem
