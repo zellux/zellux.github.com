@@ -9,7 +9,8 @@
   <meta name="author" content="zellux">
 
   
-  <meta name="description" content="Problem 32.1-2 Suppose that all characters in the pattern P are different. Show how to accelerate NAIVE-STRING-MATCHER to run in time O(n) on an n- &hellip;">
+  <meta name="description" content="Problem Given a set of N integers S={0,1,&#8230;,N−1} and a sequence of requests of the following form: Remove x from S
+Find the successor of x: the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -85,6 +86,64 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/08/notes-of-algorithms-course-week-1/">Successor With Delete</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-30T10:05:00+08:00" pubdate data-updated="true">Aug 30<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Problem</h2>
+
+<p>Given a set of N integers S={0,1,&#8230;,N−1} and a sequence of requests of the following form:</p>
+
+<ul>
+<li>Remove x from S</li>
+<li>Find the successor of x: the smallest y in S such that y≥x.</li>
+</ul>
+
+
+<p>design a data type so that all operations (except construction) should take logarithmic time or better.</p>
+
+<h2>Solution</h2>
+
+<p>This is a problem taken from the interview questions in union-find set on <a href="https://class.coursera.org/algs4partI-2012-001/quiz/attempt?quiz_id=89">Coursea Algorithms Course</a>.</p>
+
+<p>It would be much harder if posted to the interviewee without context of union-find set. Fortunately we now known it can be solved with union-find set.</p>
+
+<p>The results of finding the successor of x are saved in union-find sets, that is, when finding the successor of x, we simply return the root of the set containing x. When removing x from S, we need to make successor of removed numbers consequent to x and before x as that of x + 1. This is exactly what union function needs to do. To remove x from S, we simply merge the set containing x to the set containing x + 1 (append as its child).</p>
+
+<p>This will work for both removing and finding except that in worst cases it does not run in logarithmic time, since it does not consider set weight when merging two sets. To opmitize this, our merging function will work in a way similar to weighted quick union, except that if the numbers in the larger set are smaller than that in the smaller one, we need to change the root of unioned set to the root of the larger set. This can be done by changing the original root of the two sets. Then we make ensure logarithmic time in worst case.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -539,51 +598,9 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/">Fixing ImageMagick Crash Issues on Mac OS X</a></h1>
-      
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-02-23T16:04:00+08:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2012</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>ImageMagick may be prone to crash on Mac OS X, and it can be avoided by disabling OpenMP when compile the library:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>brew install -f imagemagick --disable-openmp</span></code></pre></td></tr></table></div></figure>
-
-
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -594,6 +611,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/08/notes-of-algorithms-course-week-1/">Successor with Delete</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/08/solution-to-clrs-chapter-32/">Solutions to CLRS Chapter 32.1</a>
@@ -609,10 +630,6 @@
     
       <li class="post">
         <a href="/blog/2012/05/some-notes-on-rspec/">Some Notes on RSpec</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/03/speeding-up-string-concatenation-in-ruby/">Speeding Up String Concatenation in Ruby</a>
       </li>
     
   </ul>

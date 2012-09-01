@@ -5,12 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Fixing ImageMagick crash issues on Mac OS X - 50a23bb7</title>
+  <title>Successor with Delete - 50a23bb7</title>
   <meta name="author" content="zellux">
 
   
-  <meta name="description" content="ImageMagick may be prone to crash on Mac OS X, and it can be avoided by disabling OpenMP when compile the library: 1
-brew install -f imagemagick -- &hellip;">
+  <meta name="description" content="Problem Given a set of N integers S={0,1,&#8230;,N−1} and a sequence of requests of the following form: Remove x from S
+Find the successor of x: the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +19,7 @@ brew install -f imagemagick -- &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zellux.github.com/blog/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/">
+  <link rel="canonical" href="http://zellux.github.com/blog/2012/08/notes-of-algorithms-course-week-1/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -90,7 +90,7 @@ brew install -f imagemagick -- &hellip;">
   <header>
     
       
-        <h1 class="entry-title">Fixing ImageMagick Crash Issues on Mac OS X</h1>
+        <h1 class="entry-title">Successor With Delete</h1>
       
     
     
@@ -107,20 +107,34 @@ brew install -f imagemagick -- &hellip;">
   
 
 
-<time datetime="2012-02-23T16:04:00+08:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2012</time>
+<time datetime="2012-08-30T10:05:00+08:00" pubdate data-updated="true">Aug 30<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>ImageMagick may be prone to crash on Mac OS X, and it can be avoided by disabling OpenMP when compile the library:</p>
+<div class="entry-content"><h2>Problem</h2>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>brew install -f imagemagick --disable-openmp</span></code></pre></td></tr></table></div></figure>
+<p>Given a set of N integers S={0,1,&#8230;,N−1} and a sequence of requests of the following form:</p>
+
+<ul>
+<li>Remove x from S</li>
+<li>Find the successor of x: the smallest y in S such that y≥x.</li>
+</ul>
 
 
+<p>design a data type so that all operations (except construction) should take logarithmic time or better.</p>
 
+<h2>Solution</h2>
+
+<p>This is a problem taken from the interview questions in union-find set on <a href="https://class.coursera.org/algs4partI-2012-001/quiz/attempt?quiz_id=89">Coursea Algorithms Course</a>.</p>
+
+<p>It would be much harder if posted to the interviewee without context of union-find set. Fortunately we now known it can be solved with union-find set.</p>
+
+<p>The results of finding the successor of x are saved in union-find sets, that is, when finding the successor of x, we simply return the root of the set containing x. When removing x from S, we need to make successor of removed numbers consequent to x and before x as that of x + 1. This is exactly what union function needs to do. To remove x from S, we simply merge the set containing x to the set containing x + 1 (append as its child).</p>
+
+<p>This will work for both removing and finding except that in worst cases it does not run in logarithmic time, since it does not consider set weight when merging two sets. To opmitize this, our merging function will work in a way similar to weighted quick union, except that if the numbers in the larger set are smaller than that in the smaller one, we need to change the root of unioned set to the root of the larger set. This can be done by changing the original root of the two sets. Then we make ensure logarithmic time in worst case.</p>
 </div>
 
 
@@ -143,12 +157,12 @@ brew install -f imagemagick -- &hellip;">
   
 
 
-<time datetime="2012-02-23T16:04:00+08:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2012</time>
+<time datetime="2012-08-30T10:05:00+08:00" pubdate data-updated="true">Aug 30<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/libraries/'>Libraries</a>, <a class='category' href='/blog/categories/mac/'>Mac</a>
+    <a class='category' href='/blog/categories/algorithms/'>Algorithms</a>
   
 </span>
 
@@ -157,7 +171,7 @@ brew install -f imagemagick -- &hellip;">
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zellux.github.com/blog/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/" data-via="zellux" data-counturl="http://zellux.github.com/blog/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zellux.github.com/blog/2012/08/notes-of-algorithms-course-week-1/" data-via="zellux" data-counturl="http://zellux.github.com/blog/2012/08/notes-of-algorithms-course-week-1/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -168,8 +182,8 @@ brew install -f imagemagick -- &hellip;">
     
     <p class="meta">
       
+        <a class="basic-alignment left articlenav" href="/blog/2012/08/solution-to-clrs-chapter-32/" title="Previous Post: Solutions to CLRS Chapter 32.1">&laquo; Solutions to CLRS Chapter 32.1</a>
       
-        <a class="basic-alignment right articlenav" href="/blog/2012/03/a-pitfall-in-coffeescript-ranges/" title="Next Post: A Pitfall in CoffeeScript Ranges">A Pitfall in CoffeeScript Ranges &raquo;</a>
       
     </p>
   </footer>
@@ -281,8 +295,8 @@ brew install -f imagemagick -- &hellip;">
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zellux.github.com/blog/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/';
-        var disqus_url = 'http://zellux.github.com/blog/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/';
+        var disqus_identifier = 'http://zellux.github.com/blog/2012/08/notes-of-algorithms-course-week-1/';
+        var disqus_url = 'http://zellux.github.com/blog/2012/08/notes-of-algorithms-course-week-1/';
         var disqus_script = 'embed.js';
       
     (function () {

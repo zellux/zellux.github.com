@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Algorithms | 50a23bb7]]></title>
   <link href="http://zellux.github.com/blog/categories/algorithms/atom.xml" rel="self"/>
   <link href="http://zellux.github.com/"/>
-  <updated>2012-09-01T21:55:14+08:00</updated>
+  <updated>2012-09-01T21:56:50+08:00</updated>
   <id>http://zellux.github.com/</id>
   <author>
     <name><![CDATA[zellux]]></name>
@@ -12,6 +12,35 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Successor with Delete]]></title>
+    <link href="http://zellux.github.com/blog/2012/08/notes-of-algorithms-course-week-1/"/>
+    <updated>2012-08-30T10:05:00+08:00</updated>
+    <id>http://zellux.github.com/blog/2012/08/notes-of-algorithms-course-week-1</id>
+    <content type="html"><![CDATA[<h2>Problem</h2>
+
+<p>Given a set of N integers S={0,1,...,N−1} and a sequence of requests of the following form:</p>
+
+<ul>
+<li>Remove x from S</li>
+<li>Find the successor of x: the smallest y in S such that y≥x.</li>
+</ul>
+
+
+<p>design a data type so that all operations (except construction) should take logarithmic time or better.</p>
+
+<h2>Solution</h2>
+
+<p>This is a problem taken from the interview questions in union-find set on <a href="https://class.coursera.org/algs4partI-2012-001/quiz/attempt?quiz_id=89">Coursea Algorithms Course</a>.</p>
+
+<p>It would be much harder if posted to the interviewee without context of union-find set. Fortunately we now known it can be solved with union-find set.</p>
+
+<p>The results of finding the successor of x are saved in union-find sets, that is, when finding the successor of x, we simply return the root of the set containing x. When removing x from S, we need to make successor of removed numbers consequent to x and before x as that of x + 1. This is exactly what union function needs to do. To remove x from S, we simply merge the set containing x to the set containing x + 1 (append as its child).</p>
+
+<p>This will work for both removing and finding except that in worst cases it does not run in logarithmic time, since it does not consider set weight when merging two sets. To opmitize this, our merging function will work in a way similar to weighted quick union, except that if the numbers in the larger set are smaller than that in the smaller one, we need to change the root of unioned set to the root of the larger set. This can be done by changing the original root of the two sets. Then we make ensure logarithmic time in worst case.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Solutions to CLRS Chapter 32.1]]></title>
