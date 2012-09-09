@@ -4,6 +4,7 @@ title: "Useful Methods in Kaminari"
 date: 2012-09-09 23:18
 comments: true
 categories: [Rails]
+published: true
 ---
 
 The famous Rails paginator
