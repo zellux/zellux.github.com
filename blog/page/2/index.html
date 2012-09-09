@@ -9,8 +9,7 @@
   <meta name="author" content="zellux">
 
   
-  <meta name="description" content="ImageMagick may be prone to crash on Mac OS X, and it can be avoided by disabling OpenMP when compile the library: 1
-brew install -f imagemagick -- &hellip;">
+  <meta name="description" content="Ranges in CoffeeScript look similar to Ruby ranges, except for one big divergence. When used in a reversed order, ranges in CoffeeScript will return &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -93,6 +92,58 @@ brew install -f imagemagick -- &hellip;">
   <header>
     
       <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
+        <h1 class="entry-title"><a href="/blog/2012/03/a-pitfall-in-coffeescript-ranges/">A Pitfall in CoffeeScript Ranges</a></h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-06T15:38:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Ranges in CoffeeScript look similar to Ruby ranges, except for one big divergence. When used in a reversed order, ranges in CoffeeScript will return an array of revered items, while in Ruby an empty sequence will be generated:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Ruby
+</span><span class='line'>(2..0).to_a  # []
+</span><span class='line'>
+</span><span class='line'># CoffeeScript
+</span><span class='line'>[2..0] # [2, 1, 0]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I am not sure why it is designed in this way. Just be careful of this pitfall when dealing with ranges in CoffeeScript.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
         <h1 class="entry-title"><a href="/blog/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/">Fixing ImageMagick Crash Issues on Mac OS X</a></h1>
       
     
@@ -146,6 +197,10 @@ brew install -f imagemagick -- &hellip;">
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/09/useful-methods-in-kaminari/">Useful Methods in Kaminari</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/08/notes-of-algorithms-course-week-1/">Successor with Delete</a>
       </li>
     
@@ -159,10 +214,6 @@ brew install -f imagemagick -- &hellip;">
     
       <li class="post">
         <a href="/blog/2012/06/adding-missing-content-length-to-send-file-headers/">Adding Content-Length to send_file Headers</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/some-notes-on-rspec/">Some Notes on RSpec</a>
       </li>
     
   </ul>

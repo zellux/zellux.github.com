@@ -5,11 +5,14 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Algorithms - 50a23bb7</title>
+  <title>Useful Methods in Kaminari - 50a23bb7</title>
   <meta name="author" content="zellux">
 
   
-  <meta name="description" content="Category: Algorithms">
+  <meta name="description" content="The famous Rails paginator
+Kaminari provides some
+methods in query objects, which may be useful for customizing
+views. They are not listed on the &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +21,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zellux.github.comblog/categories/algorithms/">
+  <link rel="canonical" href="http://zellux.github.com/blog/2012/09/useful-methods-in-kaminari/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -84,50 +87,109 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Algorithms</h1>
+    
+      
+        <h1 class="entry-title">Useful Methods in Kaminari</h1>
+      
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-09T23:18:00+08:00" pubdate data-updated="true">Sep 9<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>The famous Rails paginator
+<a href="https://github.com/amatsuda/kaminari/">Kaminari</a> provides some
+methods in query objects, which may be useful for customizing
+views. They are not listed on the document, you may find them in
+<a href="https://github.com/amatsuda/kaminari/blob/master/lib/kaminari/models/page_scope_methods.rb">lib/kaminari/models/page_scope_methods.rb</a>:</p>
 
-  
-  <h2>2012</h2>
-
-<article>
-  
-<h1><a href="/blog/2012/08/notes-of-algorithms-course-week-1/">Successor with Delete</a></h1>
-<time datetime="2012-08-30T10:05:00+08:00" pubdate><span class='month'>Aug</span> <span class='day'>30</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/algorithms/'>Algorithms</a></span>
-</footer>
-
-
-</article>
+<ul>
+<li>total_pages (alias num_pages)</li>
+<li>current_page</li>
+<li>first_page?</li>
+<li>last_page?</li>
+</ul>
 
 
-
-<article>
-  
-<h1><a href="/blog/2012/08/solution-to-clrs-chapter-32/">Solutions to CLRS Chapter 32.1</a></h1>
-<time datetime="2012-08-22T22:22:00+08:00" pubdate><span class='month'>Aug</span> <span class='day'>22</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/algorithms/'>Algorithms</a></span>
-</footer>
-
-
-</article>
-
+<p>Method names are intuitive enough to show what the method returns.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">zellux</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-09T23:18:00+08:00" pubdate data-updated="true">Sep 9<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>Rails</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://zellux.github.com/blog/2012/09/useful-methods-in-kaminari/" data-via="zellux" data-counturl="http://zellux.github.com/blog/2012/09/useful-methods-in-kaminari/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left articlenav" href="/blog/2012/08/notes-of-algorithms-course-week-1/" title="Previous Post: Successor with Delete">&laquo; Successor with Delete</a>
+      
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -228,7 +290,10 @@
       var disqus_shortname = '50a23bb7';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://zellux.github.com/blog/2012/09/useful-methods-in-kaminari/';
+        var disqus_url = 'http://zellux.github.com/blog/2012/09/useful-methods-in-kaminari/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

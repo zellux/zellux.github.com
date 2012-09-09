@@ -4,7 +4,7 @@
   <title><![CDATA[50a23bb7]]></title>
   <link href="http://zellux.github.com/atom.xml" rel="self"/>
   <link href="http://zellux.github.com/"/>
-  <updated>2012-09-01T21:56:50+08:00</updated>
+  <updated>2012-09-09T23:34:43+08:00</updated>
   <id>http://zellux.github.com/</id>
   <author>
     <name><![CDATA[zellux]]></name>
@@ -12,6 +12,29 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Useful Methods in Kaminari]]></title>
+    <link href="http://zellux.github.com/blog/2012/09/useful-methods-in-kaminari/"/>
+    <updated>2012-09-09T23:18:00+08:00</updated>
+    <id>http://zellux.github.com/blog/2012/09/useful-methods-in-kaminari</id>
+    <content type="html"><![CDATA[<p>The famous Rails paginator
+<a href="https://github.com/amatsuda/kaminari/">Kaminari</a> provides some
+methods in query objects, which may be useful for customizing
+views. They are not listed on the document, you may find them in
+<a href="https://github.com/amatsuda/kaminari/blob/master/lib/kaminari/models/page_scope_methods.rb">lib/kaminari/models/page_scope_methods.rb</a>:</p>
+
+<ul>
+<li>total_pages (alias num_pages)</li>
+<li>current_page</li>
+<li>first_page?</li>
+<li>last_page?</li>
+</ul>
+
+
+<p>Method names are intuitive enough to show what the method returns.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Successor with Delete]]></title>
