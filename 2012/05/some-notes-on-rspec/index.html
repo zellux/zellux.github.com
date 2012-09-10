@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>about - 50a23bb7</title>
+  <title>Some Notes on RSpec - 50a23bb7</title>
   <meta name="author" content="zellux">
   <meta name="Generator" content="Jekyll & Octopress (http://octopress.org)">
 
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://zellux.github.com/about/">
+  <link rel="canonical" href="http://zellux.github.com/2012/05/some-notes-on-rspec/">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/octopress.min.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="50a23bb7" type="application/atom+xml">
@@ -76,38 +76,79 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+
+
+
+
+
+
+
+
+
+
+
+<article class="hentry " role="article">
   
   <header>
-    <h1 class="entry-title">About</h1>
-    <p class="meta">
+    <h1 class="entry-title">
 
+Some Notes on RSpec
 
+</h1>
 
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-19T01:16:00+08:00" pubdate data-updated="true">Aug 19<span>th</span>, 2012</time></p>
-  </header>
-  
-  <p>I am Yuanxuan Wang (王远轩), a master&#8217;s student in Fudan University, Shanghai, China.</p>
-
-<h2>Links</h2>
-
-<ul>
-<li><a href="blog.yxwang.me">My Chinese blog</a></li>
-<li><a href="github.com/zellux">GitHub</a></li>
-</ul>
-
-
-  
-    <footer>
+    
       <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-07T15:40:00+08:00" pubdate data-updated="true">May 7<span>th</span>, 2012</time>
+         &bull; <a rel="bookmark" href="/2012/05/some-notes-on-rspec/">Permalink</a>
+      </p>
+    
+  </header>
+
+<div class="entry-content"><h3>Stubbing instance methods</h3>
+
+<p>The method <code>any_instance</code> allows stubbing instance methods easily. For example, the following line will force calling Item#price to return 10 always:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Item</span><span class="o">.</span><span class="n">any_instance</span><span class="o">.</span><span class="n">stub</span><span class="p">(</span><span class="ss">:price</span><span class="p">)</span><span class="o">.</span><span class="n">and_return</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Stubbing in helper specs</h3>
+
+<p>Stubbing in helper specs is similar to stubbing in controller specs. Just remember to add <code>helper.</code> before every helper method call.</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">it</span> <span class="s1">&#39;test current user&#39;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">helper</span><span class="o">.</span><span class="n">stub</span><span class="p">(</span><span class="ss">:current_user</span><span class="p">)</span><span class="o">.</span><span class="n">and_return</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">helper</span><span class="o">.</span><span class="n">user_avatar</span><span class="o">.</span><span class="n">should_not</span> <span class="n">be_empty</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>let and let!</h3>
+
+<p>Variables defined by <code>let</code> is evaluated in a lazy way. Use <code>let!</code> to force the evaluation before each spec.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
 
 <span class="byline author vcard">Posted by <span class="fn">zellux</span></span>
@@ -124,12 +165,22 @@
   
 
 
-<time datetime="2012-08-19T01:16:00+08:00" pubdate data-updated="true">Aug 19<span>th</span>, 2012</time>
+<time datetime="2012-05-07T15:40:00+08:00" pubdate data-updated="true">May 7<span>th</span>, 2012</time>
 
 
-</p>
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rspec/'>RSpec</a>, <a class='category' href='/blog/categories/rails/'>Rails</a>
+  
+</span>
+
+
+
       
-        <div class="sharing">
+
+    </p>
+    
+      <div class="sharing">
   
     
       <a href="http://twitter.com/share" title="Tweet this" class="twitter-share" target="_blank">Tweet</a>
@@ -137,7 +188,7 @@
   
   
     
-      <a title="+1 on Google Plus" class="googleplus-share" href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://zellux.github.com/about/index.html" target="_blank">+1</a>
+      <a title="+1 on Google Plus" class="googleplus-share" href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://zellux.github.com/2012/05/some-notes-on-rspec/" target="_blank">+1</a>
     
   
   
@@ -145,11 +196,17 @@
 
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/2012/03/speeding-up-string-concatenation-in-ruby/" title="Previous Post: Speeding Up String Concatenation in Ruby">&laquo; Speeding Up String Concatenation in Ruby</a>
+      
+      
+        <a class="basic-alignment right" href="/2012/06/adding-missing-content-length-to-send-file-headers/" title="Next Post: Adding Content-Length to send_file Headers">Adding Content-Length to send_file Headers &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
-
 
 <section>
   <h1>Comments</h1>
@@ -205,6 +262,18 @@
 
 
 
+<section>
+  <h1>On GitHub</h1>
+  <ul id="gh_repos" data-user="zellux" data-count="5" data-skip="true">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a class="github-follow" href="https://github.com/zellux">Follow @zellux</a>
+  
+</section>
+
+
+
 
 
 
@@ -232,8 +301,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://zellux.github.com/about/index.html';
-        var disqus_url = 'http://zellux.github.com/about/index.html';
+        var disqus_identifier = 'http://zellux.github.com/2012/05/some-notes-on-rspec/';
+        var disqus_url = 'http://zellux.github.com/2012/05/some-notes-on-rspec/';
         var disqus_script = 'embed.js';
       
     (function () {

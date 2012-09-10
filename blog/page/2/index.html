@@ -7,9 +7,9 @@
   <meta charset="utf-8">
   <title>50a23bb7</title>
   <meta name="author" content="zellux">
+  <meta name="Generator" content="Jekyll & Octopress (http://octopress.org)">
 
   
-  <meta name="description" content="Ranges in CoffeeScript look similar to Ruby ranges, except for one big divergence. When used in a reversed order, ranges in CoffeeScript will return &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,13 +19,9 @@
 
   
   <link rel="canonical" href="http://zellux.github.com/blog/page/2/">
-  <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <script src="/javascripts/octopress.min.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="50a23bb7" type="application/atom+xml">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -44,16 +40,12 @@
   </script>
 
 
+   
+  <link href="/octopress-favicon.png" rel="icon">
 </head>
 
 <body   >
   <header role="banner"><hgroup>
-  <div id="logo">
-  	<div id="logoLeft">{</div>
-  	<div id="logoText">sha</div>
-  	<div id="logoRight">}</div>
-  	<div class="clear"></div>
-  </div>
   <h1><a href="/">50a23bb7</a></h1>
   
     <h2>Everyday coding notes</h2>
@@ -76,7 +68,7 @@
   
 <ul class="main-navigation">
   <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/archives">Archives</a></li>
   <li><a href="/about">About</a></li>
 </ul>
 
@@ -85,16 +77,26 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
+    
+
+
+
+
+
+
+
+
+
+
+    <article >
       
   <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2012/03/a-pitfall-in-coffeescript-ranges/">A Pitfall in CoffeeScript Ranges</a></h1>
-      
-    
+    <h1 class="entry-title">
+
+<a href="/2012/03/a-pitfall-in-coffeescript-ranges/">A Pitfall in CoffeeScript Ranges</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -110,20 +112,19 @@
 
 
 <time datetime="2012-03-06T15:38:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2012</time>
-        
+         &bull; <a rel="bookmark" href="/2012/03/a-pitfall-in-coffeescript-ranges/">Permalink</a>
       </p>
     
   </header>
 
+<div class="entry-content"><p>Ranges in CoffeeScript look similar to Ruby ranges, except for one big divergence. When used in a reversed order, ranges in CoffeeScript will return an array of revered items, while in Ruby an empty sequence will be generated:</p>
 
-  <div class="entry-content"><p>Ranges in CoffeeScript look similar to Ruby ranges, except for one big divergence. When used in a reversed order, ranges in CoffeeScript will return an array of revered items, while in Ruby an empty sequence will be generated:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># Ruby
+</pre></td><td class='code'><pre><code class='plain'><span class='line'># Ruby
 </span><span class='line'>(2..0).to_a  # []
 </span><span class='line'>
 </span><span class='line'># CoffeeScript
@@ -132,21 +133,35 @@
 
 <p>I am not sure why it is designed in this way. Just be careful of this pitfall when dealing with ranges in CoffeeScript.</p>
 </div>
-  
-  
+
+  <footer>
+    
+    
+  </footer>
 
 
     </article>
   
-  
-    <article>
+    
+
+
+
+
+
+
+
+
+
+
+    <article >
       
   <header>
-    
-      <!-- Now we're back to normal posts. Note the links used under href in both headers.-->
-        <h1 class="entry-title"><a href="/blog/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/">Fixing ImageMagick Crash Issues on Mac OS X</a></h1>
-      
-    
+    <h1 class="entry-title">
+
+<a href="/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/">Fixing ImageMagick Crash Issues on Mac OS X</a>
+
+</h1>
+
     
       <p class="meta">
         
@@ -162,106 +177,47 @@
 
 
 <time datetime="2012-02-23T16:04:00+08:00" pubdate data-updated="true">Feb 23<span>rd</span>, 2012</time>
-        
+         &bull; <a rel="bookmark" href="/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/">Permalink</a>
       </p>
     
   </header>
 
+<div class="entry-content"><p>ImageMagick may be prone to crash on Mac OS X, and it can be avoided by disabling OpenMP when compile the library:</p>
 
-  <div class="entry-content"><p>ImageMagick may be prone to crash on Mac OS X, and it can be avoided by disabling OpenMP when compile the library:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>brew install -f imagemagick --disable-openmp</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>brew install -f imagemagick --disable-openmp</span></code></pre></td></tr></table></div></figure>
 
 
 
 </div>
-  
-  
+
+  <footer>
+    
+    
+  </footer>
 
 
     </article>
   
   <div class="pagination">
     
-    <a href="/blog/archives">Blog Archives</a>
+    <a href="/archives">Blog Archives</a>
     
     <a class="next" href="/">Newer &rarr;</a>
     
   </div>
 </div>
+
 <aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2012/09/useful-methods-in-kaminari/">Useful Methods in Kaminari</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/notes-of-algorithms-course-week-1/">Successor with Delete</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/solution-to-clrs-chapter-32/">Solutions to CLRS Chapter 32.1</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/08/order-of-different-formats-in-response-to-does-matter/">Order of Formats in response_to Does Matter</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/06/adding-missing-content-length-to-send-file-headers/">Adding Content-Length to send_file Headers</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/zellux">@zellux</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'zellux',
-            count: 5,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
+  
+    
 <section>
   <h1>Latest Tweets</h1>
-  <ul id="tweets">
+  <ul id="tweets" data-user="zellux" data-count="5" data-replies="false">
     <li class="loading">Status updating&#8230;</li>
   </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("zellux", 5, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
   
-    <a href="http://twitter.com/zellux" class="twitter-follow-button" data-show-count="false">Follow @zellux</a>
+    <a href="//twitter.com/zellux" class="twitter-follow-button" data-show-count="false">Follow @zellux</a>
   
 </section>
 
@@ -269,8 +225,26 @@
 
 
 
+<section>
+  <h1>On GitHub</h1>
+  <ul id="gh_repos" data-user="zellux" data-count="5" data-skip="true">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
   
+  <a class="github-follow" href="https://github.com/zellux">Follow @zellux</a>
+  
+</section>
+
+
+
+
+
+
+
+
+  
 </aside>
+
 
     </div>
   </div>
@@ -284,6 +258,7 @@
 
 <script type="text/javascript">
       var disqus_shortname = '50a23bb7';
+			var disqus_developer = '0';
       
         
         var disqus_script = 'count.js';
@@ -295,29 +270,6 @@
     }());
 </script>
 
-
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

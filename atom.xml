@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-
   <title><![CDATA[50a23bb7]]></title>
   <link href="http://zellux.github.com/atom.xml" rel="self"/>
   <link href="http://zellux.github.com/"/>
-  <updated>2012-09-09T23:34:43+08:00</updated>
+  <updated>2012-09-10T10:26:32+08:00</updated>
   <id>http://zellux.github.com/</id>
   <author>
     <name><![CDATA[zellux]]></name>
@@ -13,12 +12,18 @@
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
-  <entry>
-    <title type="html"><![CDATA[Useful Methods in Kaminari]]></title>
-    <link href="http://zellux.github.com/blog/2012/09/useful-methods-in-kaminari/"/>
-    <updated>2012-09-09T23:18:00+08:00</updated>
-    <id>http://zellux.github.com/blog/2012/09/useful-methods-in-kaminari</id>
-    <content type="html"><![CDATA[<p>The famous Rails paginator
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Useful Methods in Kaminari]]></title>
+<link href="http://zellux.github.com/2012/09/useful-methods-in-kaminari/"/>
+<updated>2012-09-09T23:18:00+08:00</updated>
+<id>http://zellux.github.com/2012/09/useful-methods-in-kaminari</id>
+
+      <content type="html"><![CDATA[<p>The famous Rails paginator
 <a href="https://github.com/amatsuda/kaminari/">Kaminari</a> provides some
 methods in query objects, which may be useful for customizing
 views. They are not listed on the document, you may find them in
@@ -33,15 +38,21 @@ views. They are not listed on the document, you may find them in
 
 
 <p>Method names are intuitive enough to show what the method returns.</p>
-]]></content>
-  </entry>
+<p><a rel="bookmark" href="http://zellux.github.com/2012/09/useful-methods-in-kaminari/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Successor with Delete]]></title>
-    <link href="http://zellux.github.com/blog/2012/08/notes-of-algorithms-course-week-1/"/>
-    <updated>2012-08-30T10:05:00+08:00</updated>
-    <id>http://zellux.github.com/blog/2012/08/notes-of-algorithms-course-week-1</id>
-    <content type="html"><![CDATA[<h2>Problem</h2>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Successor with Delete]]></title>
+<link href="http://zellux.github.com/2012/08/notes-of-algorithms-course-week-1/"/>
+<updated>2012-08-30T10:05:00+08:00</updated>
+<id>http://zellux.github.com/2012/08/notes-of-algorithms-course-week-1</id>
+
+      <content type="html"><![CDATA[<h2>Problem</h2>
 
 <p>Given a set of N integers S={0,1,&#8230;,N−1} and a sequence of requests of the following form:</p>
 
@@ -62,15 +73,21 @@ views. They are not listed on the document, you may find them in
 <p>The results of finding the successor of x are saved in union-find sets, that is, when finding the successor of x, we simply return the root of the set containing x. When removing x from S, we need to make successor of removed numbers consequent to x and before x as that of x + 1. This is exactly what union function needs to do. To remove x from S, we simply merge the set containing x to the set containing x + 1 (append as its child).</p>
 
 <p>This will work for both removing and finding except that in worst cases it does not run in logarithmic time, since it does not consider set weight when merging two sets. To opmitize this, our merging function will work in a way similar to weighted quick union, except that if the numbers in the larger set are smaller than that in the smaller one, we need to change the root of unioned set to the root of the larger set. This can be done by changing the original root of the two sets. Then we make ensure logarithmic time in worst case.</p>
-]]></content>
-  </entry>
+<p><a rel="bookmark" href="http://zellux.github.com/2012/08/notes-of-algorithms-course-week-1/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Solutions to CLRS Chapter 32.1]]></title>
-    <link href="http://zellux.github.com/blog/2012/08/solution-to-clrs-chapter-32/"/>
-    <updated>2012-08-22T22:22:00+08:00</updated>
-    <id>http://zellux.github.com/blog/2012/08/solution-to-clrs-chapter-32</id>
-    <content type="html"><![CDATA[<h2>Problem 32.1-2</h2>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Solutions to CLRS Chapter 32.1]]></title>
+<link href="http://zellux.github.com/2012/08/solution-to-clrs-chapter-32/"/>
+<updated>2012-08-22T22:22:00+08:00</updated>
+<id>http://zellux.github.com/2012/08/solution-to-clrs-chapter-32</id>
+
+      <content type="html"><![CDATA[<h2>Problem 32.1-2</h2>
 
 <blockquote><p>Suppose that all characters in the pattern P are different. Show how to accelerate NAIVE-STRING-MATCHER to run in time O(n) on an n-character text T .</p></blockquote>
 
@@ -90,17 +107,23 @@ views. They are not listed on the document, you may find them in
 
 
 <p>F(T<sub>i</sub>, P<sub>j</sub>) is true, if and only if any of the above statements is true. The problem can thus be sovled in O(n ^ 2) in a bottom-up way.</p>
-]]></content>
-  </entry>
+<p><a rel="bookmark" href="http://zellux.github.com/2012/08/solution-to-clrs-chapter-32/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Order of Formats in response_to Does Matter]]></title>
-    <link href="http://zellux.github.com/blog/2012/08/order-of-different-formats-in-response-to-does-matter/"/>
-    <updated>2012-08-17T19:48:00+08:00</updated>
-    <id>http://zellux.github.com/blog/2012/08/order-of-different-formats-in-response-to-does-matter</id>
-    <content type="html"><![CDATA[<p>The following code snippet works well for most browsers:</p>
+    <entry>
+      
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+
+
+<title type="html"><![CDATA[Order of Formats in response_to Does Matter]]></title>
+<link href="http://zellux.github.com/2012/08/order-of-different-formats-in-response-to-does-matter/"/>
+<updated>2012-08-17T19:48:00+08:00</updated>
+<id>http://zellux.github.com/2012/08/order-of-different-formats-in-response-to-does-matter</id>
+
+      <content type="html"><![CDATA[<p>The following code snippet works well for most browsers:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -114,17 +137,23 @@ views. They are not listed on the document, you may find them in
 <p>But some browsers, especially embedded webkit components, may set ContentType to <code>*/*</code> in request headers. In this case, they will get JSON data instead of HTML if they do not explicitly specify .html format in URL.</p>
 
 <p>So as long as it is not intended, putting format.html before format.json will always be a better choice.</p>
-]]></content>
-  </entry>
+<p><a rel="bookmark" href="http://zellux.github.com/2012/08/order-of-different-formats-in-response-to-does-matter/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Adding Content-Length to send_file Headers]]></title>
-    <link href="http://zellux.github.com/blog/2012/06/adding-missing-content-length-to-send-file-headers/"/>
-    <updated>2012-06-18T19:52:00+08:00</updated>
-    <id>http://zellux.github.com/blog/2012/06/adding-missing-content-length-to-send-file-headers</id>
-    <content type="html"><![CDATA[<p>Some clients and networking libraries may expect &#8216;Content-Length&#8217; in response headers when downloading files. However, this parameter is not provided in Rails send_file method. To add content size to the header, you may just add a line next to the send_file method:</p>
+    <entry>
+      
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+
+
+<title type="html"><![CDATA[Adding Content-Length to send_file Headers]]></title>
+<link href="http://zellux.github.com/2012/06/adding-missing-content-length-to-send-file-headers/"/>
+<updated>2012-06-18T19:52:00+08:00</updated>
+<id>http://zellux.github.com/2012/06/adding-missing-content-length-to-send-file-headers</id>
+
+      <content type="html"><![CDATA[<p>Some clients and networking libraries may expect &#8216;Content-Length&#8217; in response headers when downloading files. However, this parameter is not provided in Rails send_file method. To add content size to the header, you may just add a line next to the send_file method:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -138,19 +167,25 @@ views. They are not listed on the document, you may find them in
 
 
 
-]]></content>
-  </entry>
+<p><a rel="bookmark" href="http://zellux.github.com/2012/06/adding-missing-content-length-to-send-file-headers/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Some Notes on RSpec]]></title>
-    <link href="http://zellux.github.com/blog/2012/05/some-notes-on-rspec/"/>
-    <updated>2012-05-07T15:40:00+08:00</updated>
-    <id>http://zellux.github.com/blog/2012/05/some-notes-on-rspec</id>
-    <content type="html"><![CDATA[<h3>Stubbing instance methods</h3>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Some Notes on RSpec]]></title>
+<link href="http://zellux.github.com/2012/05/some-notes-on-rspec/"/>
+<updated>2012-05-07T15:40:00+08:00</updated>
+<id>http://zellux.github.com/2012/05/some-notes-on-rspec</id>
+
+      <content type="html"><![CDATA[<h3>Stubbing instance methods</h3>
 
 <p>The method <code>any_instance</code> allows stubbing instance methods easily. For example, the following line will force calling Item#price to return 10 always:</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Item</span><span class="o">.</span><span class="n">any_instance</span><span class="o">.</span><span class="n">stub</span><span class="p">(</span><span class="ss">:price</span><span class="p">)</span><span class="o">.</span><span class="n">and_return</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure>
 
@@ -159,7 +194,7 @@ views. They are not listed on the document, you may find them in
 
 <p>Stubbing in helper specs is similar to stubbing in controller specs. Just remember to add <code>helper.</code> before every helper method call.</p>
 
-<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -173,80 +208,110 @@ views. They are not listed on the document, you may find them in
 <h3>let and let!</h3>
 
 <p>Variables defined by <code>let</code> is evaluated in a lazy way. Use <code>let!</code> to force the evaluation before each spec.</p>
-]]></content>
-  </entry>
+<p><a rel="bookmark" href="http://zellux.github.com/2012/05/some-notes-on-rspec/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Speeding Up String Concatenation in Ruby]]></title>
-    <link href="http://zellux.github.com/blog/2012/03/speeding-up-string-concatenation-in-ruby/"/>
-    <updated>2012-03-30T16:31:00+08:00</updated>
-    <id>http://zellux.github.com/blog/2012/03/speeding-up-string-concatenation-in-ruby</id>
-    <content type="html"><![CDATA[<p>When concatenation large chunks of strings in Ruby, operator <code>&lt;&lt;</code> will be more efficient than <code>+</code>. This is because <code>+</code> creates immutable strings and introduces burden on garbage collector, while <code>&lt;&lt;</code> mutates the orinal string and thus do not create new objects.</p>
-]]></content>
-  </entry>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Speeding Up String Concatenation in Ruby]]></title>
+<link href="http://zellux.github.com/2012/03/speeding-up-string-concatenation-in-ruby/"/>
+<updated>2012-03-30T16:31:00+08:00</updated>
+<id>http://zellux.github.com/2012/03/speeding-up-string-concatenation-in-ruby</id>
+
+      <content type="html"><![CDATA[<p>When concatenation large chunks of strings in Ruby, operator <code>&lt;&lt;</code> will be more efficient than <code>+</code>. This is because <code>+</code> creates immutable strings and introduces burden on garbage collector, while <code>&lt;&lt;</code> mutates the orinal string and thus do not create new objects.</p>
+<p><a rel="bookmark" href="http://zellux.github.com/2012/03/speeding-up-string-concatenation-in-ruby/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Optimizing Page Rendering Speed for iPad 3]]></title>
-    <link href="http://zellux.github.com/blog/2012/03/optimizing-page-rendering-speed-for-ipad-3/"/>
-    <updated>2012-03-27T18:16:00+08:00</updated>
-    <id>http://zellux.github.com/blog/2012/03/optimizing-page-rendering-speed-for-ipad-3</id>
-    <content type="html"><![CDATA[<p>When developing online book store in <a href="http://tangcha.tc">Tangcha</a>, we were confronted with slow web page rendering issue on iPad 3, and finally found out two optimizations to make it much faster. The approaches were also posted on <a href="http://stackoverflow.com/a/10721238/111896">Stack Overflow</a>.</p>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Optimizing Page Rendering Speed for iPad 3]]></title>
+<link href="http://zellux.github.com/2012/03/optimizing-page-rendering-speed-for-ipad-3/"/>
+<updated>2012-03-27T18:16:00+08:00</updated>
+<id>http://zellux.github.com/2012/03/optimizing-page-rendering-speed-for-ipad-3</id>
+
+      <content type="html"><![CDATA[<p>When developing online book store in <a href="http://tangcha.tc">Tangcha</a>, we were confronted with slow web page rendering issue on iPad 3, and finally found out two optimizations to make it much faster. The approaches were also posted on <a href="http://stackoverflow.com/a/10721238/111896">Stack Overflow</a>.</p>
 
 <ol>
 <li><p>Avoid using CSS3 effects. We used a lot of CSS3 shadows in previous versions, which slowed down rendering process on iPad 3 a lot. After replacing those shadow effects with background images, performance got greatly improved on iPad 3.</p></li>
 <li><p>Optimize Javascript. Our application has some scrollable components, whenever user scrolls the component some Javascript code will be executed to do some loading work, like loading images in a lazy way. On iPad 3 scrolling will delay for 500ms when user tries to scroll from one page to the next. Then we found some unnecessary image loading work were performed in the scrolling callback, after removing them, the scrolling performance is acceptable.</p></li>
 </ol>
 
-]]></content>
-  </entry>
+<p><a rel="bookmark" href="http://zellux.github.com/2012/03/optimizing-page-rendering-speed-for-ipad-3/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Finding out the encoding of a MySQL Database]]></title>
-    <link href="http://zellux.github.com/blog/2012/03/finding-out-the-encoding-of-a-mysql-database/"/>
-    <updated>2012-03-23T09:45:00+08:00</updated>
-    <id>http://zellux.github.com/blog/2012/03/finding-out-the-encoding-of-a-mysql-database</id>
-    <content type="html"><![CDATA[<p>Find out the encoding of a MySQL database:</p>
+    <entry>
+      
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>SHOW VARIABLES LIKE 'character_set_%';</span></code></pre></td></tr></table></div></figure>
+
+
+
+<title type="html"><![CDATA[Finding out the encoding of a MySQL Database]]></title>
+<link href="http://zellux.github.com/2012/03/finding-out-the-encoding-of-a-mysql-database/"/>
+<updated>2012-03-23T09:45:00+08:00</updated>
+<id>http://zellux.github.com/2012/03/finding-out-the-encoding-of-a-mysql-database</id>
+
+      <content type="html"><![CDATA[<p>Find out the encoding of a MySQL database:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>SHOW VARIABLES LIKE 'character_set_%';</span></code></pre></td></tr></table></div></figure>
 
 
 <p>Find out the encoding of a specific table:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>SHOW CREATE TABLE table_name;</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>SHOW CREATE TABLE table_name;</span></code></pre></td></tr></table></div></figure>
 
 
 
-]]></content>
-  </entry>
+<p><a rel="bookmark" href="http://zellux.github.com/2012/03/finding-out-the-encoding-of-a-mysql-database/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Concurrency vs Parallellism]]></title>
-    <link href="http://zellux.github.com/blog/2012/03/concurrency-vs-parallellism/"/>
-    <updated>2012-03-23T00:19:00+08:00</updated>
-    <id>http://zellux.github.com/blog/2012/03/concurrency-vs-parallellism</id>
-    <content type="html"><![CDATA[<p>Just found a simple and accurate definition in Go Course Day 2:</p>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Concurrency vs Parallellism]]></title>
+<link href="http://zellux.github.com/2012/03/concurrency-vs-parallellism/"/>
+<updated>2012-03-23T00:19:00+08:00</updated>
+<id>http://zellux.github.com/2012/03/concurrency-vs-parallellism</id>
+
+      <content type="html"><![CDATA[<p>Just found a simple and accurate definition in Go Course Day 2:</p>
 
 <blockquote><p>Concurrency is a property of the problem. Parallel execution is when the concurrent parts are executed at the same time on separate processes.</p></blockquote>
 
 <p> I cannot find original slides on <a href="http://golang.org">golang.org</a> though.</p>
-]]></content>
-  </entry>
+<p><a rel="bookmark" href="http://zellux.github.com/2012/03/concurrency-vs-parallellism/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[A Pitfall in CoffeeScript Ranges]]></title>
-    <link href="http://zellux.github.com/blog/2012/03/a-pitfall-in-coffeescript-ranges/"/>
-    <updated>2012-03-06T15:38:00+08:00</updated>
-    <id>http://zellux.github.com/blog/2012/03/a-pitfall-in-coffeescript-ranges</id>
-    <content type="html"><![CDATA[<p>Ranges in CoffeeScript look similar to Ruby ranges, except for one big divergence. When used in a reversed order, ranges in CoffeeScript will return an array of revered items, while in Ruby an empty sequence will be generated:</p>
+    <entry>
+      
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+
+
+
+<title type="html"><![CDATA[A Pitfall in CoffeeScript Ranges]]></title>
+<link href="http://zellux.github.com/2012/03/a-pitfall-in-coffeescript-ranges/"/>
+<updated>2012-03-06T15:38:00+08:00</updated>
+<id>http://zellux.github.com/2012/03/a-pitfall-in-coffeescript-ranges</id>
+
+      <content type="html"><![CDATA[<p>Ranges in CoffeeScript look similar to Ruby ranges, except for one big divergence. When used in a reversed order, ranges in CoffeeScript will return an array of revered items, while in Ruby an empty sequence will be generated:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># Ruby
+</pre></td><td class='code'><pre><code class='plain'><span class='line'># Ruby
 </span><span class='line'>(2..0).to_a  # []
 </span><span class='line'>
 </span><span class='line'># CoffeeScript
@@ -254,22 +319,28 @@ views. They are not listed on the document, you may find them in
 
 
 <p>I am not sure why it is designed in this way. Just be careful of this pitfall when dealing with ranges in CoffeeScript.</p>
-]]></content>
-  </entry>
+<p><a rel="bookmark" href="http://zellux.github.com/2012/03/a-pitfall-in-coffeescript-ranges/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Fixing ImageMagick crash issues on Mac OS X]]></title>
-    <link href="http://zellux.github.com/blog/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/"/>
-    <updated>2012-02-23T16:04:00+08:00</updated>
-    <id>http://zellux.github.com/blog/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x</id>
-    <content type="html"><![CDATA[<p>ImageMagick may be prone to crash on Mac OS X, and it can be avoided by disabling OpenMP when compile the library:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>brew install -f imagemagick --disable-openmp</span></code></pre></td></tr></table></div></figure>
+    <entry>
+      
 
 
 
-]]></content>
-  </entry>
+
+<title type="html"><![CDATA[Fixing ImageMagick crash issues on Mac OS X]]></title>
+<link href="http://zellux.github.com/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/"/>
+<updated>2012-02-23T16:04:00+08:00</updated>
+<id>http://zellux.github.com/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x</id>
+
+      <content type="html"><![CDATA[<p>ImageMagick may be prone to crash on Mac OS X, and it can be avoided by disabling OpenMP when compile the library:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>brew install -f imagemagick --disable-openmp</span></code></pre></td></tr></table></div></figure>
+
+
+
+<p><a rel="bookmark" href="http://zellux.github.com/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
 </feed>
