@@ -9,7 +9,7 @@ categories: C++
 
 I just started learning C++ and occurred a bug related with container size comparison.
 
-The following code looks ok from a Java or Ruby's perspective:
+The following code looks ok from Java or Ruby's perspective:
 
 ``` c
 while (front.size() - back.size() > 1) {
