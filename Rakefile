@@ -284,7 +284,6 @@ end
 
 desc "Generate website and deploy"
 task :gen_deploy => [:integrate, :generate, :deploy] do
-  %x(git push)
 end
 
 desc "copy dot files for deployment"
