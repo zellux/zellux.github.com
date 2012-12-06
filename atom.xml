@@ -3,7 +3,7 @@
   <title><![CDATA[50a23bb7]]></title>
   <link href="http://tech.yxwang.me/atom.xml" rel="self"/>
   <link href="http://tech.yxwang.me/"/>
-  <updated>2012-12-06T15:40:28+08:00</updated>
+  <updated>2012-12-06T15:42:32+08:00</updated>
   <id>http://tech.yxwang.me/</id>
   <author>
     <name><![CDATA[zellux]]></name>
@@ -25,7 +25,7 @@
 
       <content type="html"><![CDATA[<p>I just started learning C++ and occurred a bug related with container size comparison.</p>
 
-<p>The following code looks ok from a Java or Ruby&#8217;s perspective:</p>
+<p>The following code looks ok from Java or Ruby&#8217;s perspective:</p>
 
 <figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
