@@ -34,4 +34,4 @@ task :generate do
 end
 ```
 
-Now I can see my latest blog posts with old /feed/ url (Note that the blog mentioned here is [another one](http://blog.yxwang.me/) written in Chinese. Hope this trick can help you as well.
+Now I can see my latest blog posts with old /feed/ url (Note that the blog mentioned here is [another one](http://blog.yxwang.me/)) written in Chinese. Hope this trick can help you as well.
