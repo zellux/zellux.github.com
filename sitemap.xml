@@ -57,15 +57,19 @@
         <lastmod>2013-01-01T17:00:01+08:00</lastmod>
     </url>
     <url>
+        <loc>http://tech.yxwang.me/2013/01/multiple-feeds-for-octopress/</loc>
+        <lastmod>2013-01-01T17:54:42+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://tech.yxwang.me/about/</loc>
         <lastmod>2013-01-01T17:21:07+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/archives/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T17:54:42+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T17:54:42+08:00</lastmod>
     </url>
 </urlset>

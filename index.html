@@ -94,6 +94,96 @@
   <header>
     <h1 class="entry-title">
 
+<a href="/2013/01/multiple-feeds-for-octopress/">Multiple Feeds for Octopress</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-01T17:43:00+08:00" pubdate data-updated="true">Jan 1<span>st</span>, 2013</time>
+         &bull; <a rel="bookmark" href="/2013/01/multiple-feeds-for-octopress/">Permalink</a>
+      </p>
+    
+  </header>
+
+<div class="entry-content"><p>Before writing in Octopress, I was using Wordpress as blog platform. Wordpress provides Atom seed via /feed/, and after switching my blog platform to Octopress (the blog url is not changed), Atom seed is published through /atom.xml, which means subscribers to my Wordpress will not notified for future blog updates.</p>
+
+<p>I figured out two approaches to make them happy. One way is to redirect /feed/ requests to /atom.xml. Take nginx as an example, add the following lines to the site configuration:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>location = /feed/ {
+</span><span class='line'>    rewrite ^(.*)$ http://blog.yxwang.me/atom.xml;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Meanwhile if <a href="http://httpd.apache.org/docs/2.2/howto/htaccess.html">.htaccess</a> is supported on your server you can also define redirection with it.</p>
+
+<p>Recently I switched to another static web service, neither .htaccess nor nginx configuration is allowed. I have to find new way to make /feed/ provides Atom. Here is one simple way to do it, by adding two lines to the end of :generate task, the script will save a clone of atom.xml to /feed/index.html:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">desc</span> <span class="s2">&quot;Generate jekyll site&quot;</span>
+</span><span class='line'><span class="n">task</span> <span class="ss">:generate</span> <span class="k">do</span>
+</span><span class='line'>  <span class="k">raise</span> <span class="s2">&quot;### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;## Generating Site with Jekyll&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;compass compile --css-dir </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/stylesheets&quot;</span>
+</span><span class='line'>  <span class="no">Rake</span><span class="o">::</span><span class="no">Task</span><span class="o">[</span><span class="s1">&#39;minify_and_combine&#39;</span><span class="o">].</span><span class="n">execute</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;jekyll&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;mkdir -p </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/feed&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;cp </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/atom.xml </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/feed/index.html&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now I can see my latest blog posts with old /feed/ url (Note that the blog mentioned here is <a href="http://blog.yxwang.me/">another one</a> written in Chinese. Hope this trick can help you as well.</p>
+</div>
+
+  <footer>
+    
+    
+  </footer>
+
+
+    </article>
+  
+    
+
+
+
+
+
+
+
+
+
+
+    <article >
+      
+  <header>
+    <h1 class="entry-title">
+
 <a href="/2012/12/traps-in-comparing-container-sizes/">Traps in Comparing Container Sizes</a>
 
 </h1>
@@ -671,69 +761,6 @@ views. They are not listed on the document, you may find them in
 <li><p>Avoid using CSS3 effects. We used a lot of CSS3 shadows in previous versions, which slowed down rendering process on iPad 3 a lot. After replacing those shadow effects with background images, performance got greatly improved on iPad 3.</p></li>
 <li><p>Optimize Javascript. Our application has some scrollable components, whenever user scrolls the component some Javascript code will be executed to do some loading work, like loading images in a lazy way. On iPad 3 scrolling will delay for 500ms when user tries to scroll from one page to the next. Then we found some unnecessary image loading work were performed in the scrolling callback, after removing them, the scrolling performance is acceptable.</p></li>
 </ol>
-
-</div>
-
-  <footer>
-    
-    
-  </footer>
-
-
-    </article>
-  
-    
-
-
-
-
-
-
-
-
-
-
-    <article >
-      
-  <header>
-    <h1 class="entry-title">
-
-<a href="/2012/03/finding-out-the-encoding-of-a-mysql-database/">Finding Out the Encoding of a MySQL Database</a>
-
-</h1>
-
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-23T09:45:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
-         &bull; <a rel="bookmark" href="/2012/03/finding-out-the-encoding-of-a-mysql-database/">Permalink</a>
-      </p>
-    
-  </header>
-
-<div class="entry-content"><p>Find out the encoding of a MySQL database:</p>
-
-<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='plain'><span class='line'>SHOW VARIABLES LIKE 'character_set_%';</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Find out the encoding of a specific table:</p>
-
-<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='plain'><span class='line'>SHOW CREATE TABLE table_name;</span></code></pre></td></tr></table></div></figure>
-
-
 
 </div>
 

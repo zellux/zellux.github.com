@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Useful Methods in Kaminari - 50a23bb7</title>
+  <title>Multiple Feeds for Octopress - 50a23bb7</title>
   <meta name="author" content="zellux">
   <meta name="Generator" content="Jekyll & Octopress (http://octopress.org)">
 
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://tech.yxwang.me/2012/09/useful-methods-in-kaminari/">
+  <link rel="canonical" href="http://tech.yxwang.me/2013/01/multiple-feeds-for-octopress/">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/octopress.min.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="50a23bb7" type="application/atom+xml">
@@ -93,7 +93,7 @@
   <header>
     <h1 class="entry-title">
 
-Useful Methods in Kaminari
+Multiple Feeds for Octopress
 
 </h1>
 
@@ -111,27 +111,52 @@ Useful Methods in Kaminari
   
 
 
-<time datetime="2012-09-09T23:18:00+08:00" pubdate data-updated="true">Sep 9<span>th</span>, 2012</time>
-         &bull; <a rel="bookmark" href="/2012/09/useful-methods-in-kaminari/">Permalink</a>
+<time datetime="2013-01-01T17:43:00+08:00" pubdate data-updated="true">Jan 1<span>st</span>, 2013</time>
+         &bull; <a rel="bookmark" href="/2013/01/multiple-feeds-for-octopress/">Permalink</a>
       </p>
     
   </header>
 
-<div class="entry-content"><p>The famous Rails paginator
-<a href="https://github.com/amatsuda/kaminari/">Kaminari</a> provides some
-methods in query objects, which may be useful for customizing
-views. They are not listed on the document, you may find them in
-<a href="https://github.com/amatsuda/kaminari/blob/master/lib/kaminari/models/page_scope_methods.rb">lib/kaminari/models/page_scope_methods.rb</a>:</p>
+<div class="entry-content"><p>Before writing in Octopress, I was using Wordpress as blog platform. Wordpress provides Atom seed via /feed/, and after switching my blog platform to Octopress (the blog url is not changed), Atom seed is published through /atom.xml, which means subscribers to my Wordpress will not notified for future blog updates.</p>
 
-<ul>
-<li>total_pages (alias num_pages)</li>
-<li>current_page</li>
-<li>first_page?</li>
-<li>last_page?</li>
-</ul>
+<p>I figured out two approaches to make them happy. One way is to redirect /feed/ requests to /atom.xml. Take nginx as an example, add the following lines to the site configuration:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>location = /feed/ {
+</span><span class='line'>    rewrite ^(.*)$ http://blog.yxwang.me/atom.xml;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Method names are intuitive enough to show what the method returns.</p>
+<p>Meanwhile if <a href="http://httpd.apache.org/docs/2.2/howto/htaccess.html">.htaccess</a> is supported on your server you can also define redirection with it.</p>
+
+<p>Recently I switched to another static web service, neither .htaccess nor nginx configuration is allowed. I have to find new way to make /feed/ provides Atom. Here is one simple way to do it, by adding two lines to the end of :generate task, the script will save a clone of atom.xml to /feed/index.html:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">desc</span> <span class="s2">&quot;Generate jekyll site&quot;</span>
+</span><span class='line'><span class="n">task</span> <span class="ss">:generate</span> <span class="k">do</span>
+</span><span class='line'>  <span class="k">raise</span> <span class="s2">&quot;### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;## Generating Site with Jekyll&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;compass compile --css-dir </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/stylesheets&quot;</span>
+</span><span class='line'>  <span class="no">Rake</span><span class="o">::</span><span class="no">Task</span><span class="o">[</span><span class="s1">&#39;minify_and_combine&#39;</span><span class="o">].</span><span class="n">execute</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;jekyll&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;mkdir -p </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/feed&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;cp </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/atom.xml </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/feed/index.html&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now I can see my latest blog posts with old /feed/ url (Note that the blog mentioned here is <a href="http://blog.yxwang.me/">another one</a> written in Chinese. Hope this trick can help you as well.</p>
 </div>
 
 
@@ -154,12 +179,12 @@ views. They are not listed on the document, you may find them in
   
 
 
-<time datetime="2012-09-09T23:18:00+08:00" pubdate data-updated="true">Sep 9<span>th</span>, 2012</time>
+<time datetime="2013-01-01T17:43:00+08:00" pubdate data-updated="true">Jan 1<span>st</span>, 2013</time>
 
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/rails/'>Rails</a>
+    <a class='category' href='/blog/categories/octopress/'>Octopress</a>
   
 </span>
 
@@ -177,7 +202,7 @@ views. They are not listed on the document, you may find them in
   
   
     
-      <a title="+1 on Google Plus" class="googleplus-share" href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://tech.yxwang.me/2012/09/useful-methods-in-kaminari/" target="_blank">+1</a>
+      <a title="+1 on Google Plus" class="googleplus-share" href="https://plusone.google.com/_/+1/confirm?hl=en&url=http://tech.yxwang.me/2013/01/multiple-feeds-for-octopress/" target="_blank">+1</a>
     
   
   
@@ -188,10 +213,8 @@ views. They are not listed on the document, you may find them in
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/2012/08/notes-of-algorithms-course-week-1/" title="Previous Post: Successor with Delete">&laquo; Successor with Delete</a>
+        <a class="basic-alignment left" href="/2012/12/traps-in-comparing-container-sizes/" title="Previous Post: Traps in Comparing Container Sizes">&laquo; Traps in Comparing Container Sizes</a>
       
-      
-        <a class="basic-alignment right" href="/2012/12/traps-in-comparing-container-sizes/" title="Next Post: Traps in Comparing Container Sizes">Traps in Comparing Container Sizes &raquo;</a>
       
     </p>
   </footer>
@@ -290,8 +313,8 @@ views. They are not listed on the document, you may find them in
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://tech.yxwang.me/2012/09/useful-methods-in-kaminari/';
-        var disqus_url = 'http://tech.yxwang.me/2012/09/useful-methods-in-kaminari/';
+        var disqus_identifier = 'http://tech.yxwang.me/2013/01/multiple-feeds-for-octopress/';
+        var disqus_url = 'http://tech.yxwang.me/2013/01/multiple-feeds-for-octopress/';
         var disqus_script = 'embed.js';
       
     (function () {

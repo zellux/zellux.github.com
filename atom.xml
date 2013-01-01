@@ -3,7 +3,7 @@
   <title><![CDATA[50a23bb7]]></title>
   <link href="http://tech.yxwang.me/atom.xml" rel="self"/>
   <link href="http://tech.yxwang.me/"/>
-  <updated>2013-01-01T17:21:16+08:00</updated>
+  <updated>2013-01-01T17:55:00+08:00</updated>
   <id>http://tech.yxwang.me/</id>
   <author>
     <name><![CDATA[zellux]]></name>
@@ -11,6 +11,60 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Multiple Feeds for Octopress]]></title>
+<link href="http://tech.yxwang.me/2013/01/multiple-feeds-for-octopress/"/>
+<updated>2013-01-01T17:43:00+08:00</updated>
+<id>http://tech.yxwang.me/2013/01/multiple-feeds-for-octopress</id>
+
+      <content type="html"><![CDATA[<p>Before writing in Octopress, I was using Wordpress as blog platform. Wordpress provides Atom seed via /feed/, and after switching my blog platform to Octopress (the blog url is not changed), Atom seed is published through /atom.xml, which means subscribers to my Wordpress will not notified for future blog updates.</p>
+
+<p>I figured out two approaches to make them happy. One way is to redirect /feed/ requests to /atom.xml. Take nginx as an example, add the following lines to the site configuration:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>location = /feed/ {
+</span><span class='line'>    rewrite ^(.*)$ http://blog.yxwang.me/atom.xml;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Meanwhile if <a href="http://httpd.apache.org/docs/2.2/howto/htaccess.html">.htaccess</a> is supported on your server you can also define redirection with it.</p>
+
+<p>Recently I switched to another static web service, neither .htaccess nor nginx configuration is allowed. I have to find new way to make /feed/ provides Atom. Here is one simple way to do it, by adding two lines to the end of :generate task, the script will save a clone of atom.xml to /feed/index.html:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">desc</span> <span class="s2">&quot;Generate jekyll site&quot;</span>
+</span><span class='line'><span class="n">task</span> <span class="ss">:generate</span> <span class="k">do</span>
+</span><span class='line'>  <span class="k">raise</span> <span class="s2">&quot;### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;## Generating Site with Jekyll&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;compass compile --css-dir </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/stylesheets&quot;</span>
+</span><span class='line'>  <span class="no">Rake</span><span class="o">::</span><span class="no">Task</span><span class="o">[</span><span class="s1">&#39;minify_and_combine&#39;</span><span class="o">].</span><span class="n">execute</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;jekyll&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;mkdir -p </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/feed&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;cp </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/atom.xml </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/feed/index.html&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now I can see my latest blog posts with old /feed/ url (Note that the blog mentioned here is <a href="http://blog.yxwang.me/">another one</a> written in Chinese. Hope this trick can help you as well.</p>
+<p><a rel="bookmark" href="http://tech.yxwang.me/2013/01/multiple-feeds-for-octopress/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
     <entry>
       
