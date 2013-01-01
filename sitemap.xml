@@ -2,74 +2,74 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://tech.yxwang.me/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/2012/03/a-pitfall-in-coffeescript-ranges/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/2012/03/concurrency-vs-parallellism/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/2012/03/finding-out-the-encoding-of-a-mysql-database/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/2012/03/optimizing-page-rendering-speed-for-ipad-3/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/2012/03/speeding-up-string-concatenation-in-ruby/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/2012/05/some-notes-on-rspec/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://tech.yxwang.me/2012/06/adding-missing-content-length-to-send-file-headers/
         </loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://tech.yxwang.me/2012/08/order-of-different-formats-in-response-to-does-matter/
         </loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/2012/08/solution-to-clrs-chapter-32/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/2012/08/notes-of-algorithms-course-week-1/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/2012/09/useful-methods-in-kaminari/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/2012/12/traps-in-comparing-container-sizes/</loc>
-        <lastmod>2013-01-01T17:00:01+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/2013/01/multiple-feeds-for-octopress/</loc>
-        <lastmod>2013-01-01T18:06:50+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/about/</loc>
-        <lastmod>2013-01-01T17:21:07+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/archives/</loc>
-        <lastmod>2013-01-01T18:06:50+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.yxwang.me/</loc>
-        <lastmod>2013-01-01T18:06:50+08:00</lastmod>
+        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
 </urlset>
