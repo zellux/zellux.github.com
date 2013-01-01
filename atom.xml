@@ -3,7 +3,7 @@
   <title><![CDATA[50a23bb7]]></title>
   <link href="http://tech.yxwang.me/atom.xml" rel="self"/>
   <link href="http://tech.yxwang.me/"/>
-  <updated>2013-01-01T17:55:00+08:00</updated>
+  <updated>2013-01-01T18:06:59+08:00</updated>
   <id>http://tech.yxwang.me/</id>
   <author>
     <name><![CDATA[zellux]]></name>
@@ -62,7 +62,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Now I can see my latest blog posts with old /feed/ url (Note that the blog mentioned here is <a href="http://blog.yxwang.me/">another one</a> written in Chinese. Hope this trick can help you as well.</p>
+<p>Now I can see my latest blog posts with old /feed/ url (Note that the blog mentioned here is <a href="http://blog.yxwang.me/">another one</a>) written in Chinese. Hope this trick can help you as well.</p>
 <p><a rel="bookmark" href="http://tech.yxwang.me/2013/01/multiple-feeds-for-octopress/">&#9875; Permalink</a></p>]]></content>
     </entry>
   
