@@ -11,6 +11,6 @@ I am Yuanxuan Wang (王远轩), a master's student in Fudan University, Shanghai
 
 ## Links
 
-- [My Chinese blog](blog.yxwang.me)
-- [GitHub](github.com/zellux)
+- [My Chinese blog](http://blog.yxwang.me)
+- [GitHub](https://github.com/zellux)
 
