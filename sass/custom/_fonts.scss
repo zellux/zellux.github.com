@@ -2,9 +2,70 @@
 // To give it a try, uncomment some of the lines below rebuild your blog, and see how it works. your sites's.
 // If you love to use Web Fonts, you also need to add some lines to source/_includes/custom/head.html
 
-$sans: "Monda", sans-serif;
-$serif: "Monda", serif;
+$sans: "Open Sans", sans-serif;
+$serif: "Open Sans", serif;
 //$mono: "Courier", monospace;
 //$heading-font-family: "Verdana", sans-serif;
 //$header-title-font-family: "Futura", sans-serif;
 //$header-subtitle-font-family: "Futura", sans-serif;
+
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: normal;
+  src: local('PT Serif'), local('PTSerif-Regular'), url('/assets/fonts/pt-serif-400.woff') format('woff');
+}
+@font-face {
+  font-family: 'PT Serif';
+  font-style: normal;
+  font-weight: bold;
+  src: local('PT Serif Bold'), local('PTSerif-Bold'), url('/assets/fonts/pt-serif-700.woff') format('woff');
+}
+// @font-face {
+//     font-family: 'Arvo';
+//     src: url('/assets/fonts/arvo/arvo-regular-webfont.eot');
+//     src: url('/assets/fonts/arvo/arvo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('/assets/fonts/arvo/arvo-regular-webfont.woff') format('woff'),
+//          url('/assets/fonts/arvo/arvo-regular-webfont.ttf') format('truetype'),
+//          url('/assets/fonts/arvo/arvo-regular-webfont.svg#arvoregular') format('svg');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'Arvo';
+//     src: url('/assets/fonts/arvo/arvo-bold-webfont.eot');
+//     src: url('/assets/fonts/arvo/arvo-bold-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('/assets/fonts/arvo/arvo-bold-webfont.woff') format('woff'),
+//          url('/assets/fonts/arvo/arvo-bold-webfont.ttf') format('truetype'),
+//          url('/assets/fonts/arvo/arvo-bold-webfont.svg#arvobold') format('svg');
+//     font-weight: bold;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'Arvo';
+//     src: url('/assets/fonts/arvo/arvo-italic-webfont.eot');
+//     src: url('/assets/fonts/arvo/arvo-italic-webfont.eot?#iefix') format('embedded-opentype'),
+//          url('/assets/fonts/arvo/arvo-italic-webfont.woff') format('woff'),
+//          url('/assets/fonts/arvo/arvo-italic-webfont.ttf') format('truetype'),
+//          url('/assets/fonts/arvo/arvo-italic-webfont.svg#arvoitalic') format('svg');
+//     font-weight: normal;
+//     font-style: italic;
+// }
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url('/assets/fonts/opensans/k3k702ZOKiLJc3WVjuplzKRDOzjiPcYnFooOUGCOsRk.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url('/assets/fonts/opensans/xjAJXh38I15wypJXxuGMBrrIa-7acMAeDBVuclsi6Gc.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Open Sans'), local('OpenSans'), url('/assets/fonts/opensans/cJZKeOuBrn4kERxqtaUH3bO3LdcAZYWl9Si6vvxL-qU.woff') format('woff');
+}
