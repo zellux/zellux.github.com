@@ -61,15 +61,19 @@
         <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
+        <loc>http://blog.zellux.me/2013/03/fixing-random-attribute-exception-in-rails/</loc>
+        <lastmod>2013-03-04T11:39:52+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://blog.zellux.me/about/</loc>
         <lastmod>2013-01-01T18:09:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/archives/</loc>
-        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
+        <lastmod>2013-03-04T11:39:52+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/</loc>
-        <lastmod>2013-01-01T18:09:33+08:00</lastmod>
+        <lastmod>2013-03-04T11:39:52+08:00</lastmod>
     </url>
 </urlset>

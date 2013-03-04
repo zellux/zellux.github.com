@@ -3,7 +3,7 @@
   <title><![CDATA[ZelluX's Dev Blog]]></title>
   <link href="http://blog.zellux.me/atom.xml" rel="self"/>
   <link href="http://blog.zellux.me/"/>
-  <updated>2013-02-10T20:35:33+08:00</updated>
+  <updated>2013-03-04T11:40:19+08:00</updated>
   <id>http://blog.zellux.me/</id>
   <author>
     <name><![CDATA[zellux]]></name>
@@ -11,6 +11,105 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Fixing Random Rails Attribute Exceptions]]></title>
+<link href="http://blog.zellux.me/2013/03/fixing-random-attribute-exception-in-rails/"/>
+<updated>2013-03-04T11:02:00+08:00</updated>
+<id>http://blog.zellux.me/2013/03/fixing-random-attribute-exception-in-rails</id>
+
+      <content type="html"><![CDATA[<p>In the previous weeks I found in my Rails log that there were random exceptions when I was trying to access some attributes from current_user, like <code>current_user.id</code>, and I was pretty sure that user had logged in when accessing such attributes.</p>
+
+<p>All the exceptions were quite random. The statements which cased these exceptions worked for the most time. Here are some exception traces:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>
+</span><span class='line'>NoMethodError (undefined method `to_sym' for nil:NilClass):
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/sanitization.rb:60:in `block in expand_hash_conditions_for_aggregates'
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/sanitization.rb:59:in `each'
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/sanitization.rb:59:in `expand_hash_conditions_for_aggregates'
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/relation/query_methods.rb:326:in `build_where'
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/relation/query_methods.rb:136:in `where'
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/querying.rb:9:in `where'
+</span><span class='line'>  orm_adapter (0.4.0) lib/orm_adapter/adapters/active_record.rb:17:in `get'
+</span><span class='line'>  devise (2.1.2) lib/devise/models/authenticatable.rb:183:in `serialize_from_session'
+</span><span class='line'>  devise (2.1.2) lib/devise/rails/warden_compat.rb:29:in `deserialize'
+</span><span class='line'>  warden (1.2.1) lib/warden/session_serializer.rb:35:in `fetch'
+</span><span class='line'>  warden (1.2.1) lib/warden/proxy.rb:212:in `user'
+</span><span class='line'>  warden (1.2.1) lib/warden/proxy.rb:318:in `_perform_authentication'
+</span><span class='line'>  warden (1.2.1) lib/warden/proxy.rb:127:in `authenticate!'
+</span><span class='line'>  devise (2.1.2) lib/devise/controllers/helpers.rb:48:in `authenticate_user!'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/callbacks.rb:451:in `_run__2120724129680932349__process_action__409155903620940597__callbacks'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/callbacks.rb:405:in `__run_callback'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/callbacks.rb:81:in `run_callbacks'
+</span><span class='line'>  actionpack (3.2.11) lib/abstract_controller/callbacks.rb:17:in `process_action'
+</span><span class='line'>  actionpack (3.2.11) lib/action_controller/metal/rescue.rb:29:in `process_action'
+</span><span class='line'>  actionpack (3.2.11) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/notifications.rb:123:in `block in instrument'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/notifications.rb:123:in `instrument'
+</span><span class='line'>  actionpack (3.2.11) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+</span><span class='line'>  actionpack (3.2.11) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+</span><span class='line'>  ……</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>ActiveRecord::UnknownPrimaryKey (Unknown primary key for table users in model User.):
+</span><span class='line'>  app/concerns/xxx.rb:15:in `xxxxxx'
+</span><span class='line'>  app/controllers/items_controller.rb:37:in `xxxxxx'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The Rails application is running on Debian 6.0.2 x86_64, powered by unicorn 4.1.1, MySQL 5.1 and nginx 1.0.12.</p>
+
+<p>At first I thought the problem was related with old version of <a href="https://github.com/plataformatec/devise">devise</a>, but after upgrading it to the latest stable version, the problem still existed. And I also tried several other approaches, but none of them worked.</p>
+
+<p>One day I found in the log that occasionally it took a SQL SELECT statement 800ms to get result from a table with less than  100 entries. Then I realised MySQL was overloaded.</p>
+
+<p>My previous configuration of unicorn and database created 8 unicorn worker processes, each maintaining 5 concurrent connections (5 is the default value) to MySQL, which means there were 40 concurrent connections to MySQL. I changed it to 4 processes, each with 2 MySQL connections. Since that similar exceptions have never occurred in the last week.</p>
+
+<p>This is my tedious log of how this bug is fixed. Hope it can help you.</p>
+<p><a rel="bookmark" href="http://blog.zellux.me/2013/03/fixing-random-attribute-exception-in-rails/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
     <entry>
       
