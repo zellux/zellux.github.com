@@ -7,7 +7,7 @@ sharing: true
 footer: true
 ---
 
-I am Yuanxuan Wang (王远轩), a master's student in Fudan University, Shanghai, China.
+I am Yuanxuan Wang (王远轩), a master's student in Fudan University, Shanghai, China. Expected to graduate in July and start to work in California in October.
 
 ## Links
 
