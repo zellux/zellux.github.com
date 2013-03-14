@@ -117,7 +117,13 @@ Fixing Random Rails Attribute Exceptions
     
   </header>
 
-<div class="entry-content"><p>In the previous weeks I found in my Rails log that there were random exceptions when I was trying to access some attributes from current_user, like <code>current_user.id</code>, and I was pretty sure that user had logged in when accessing such attributes.</p>
+<div class="entry-content"><blockquote class="tldr-embed-widget" data-align="center">      <p>      <a href="http://tldr.io/tldrs/514075185e338fb353000080/fixing-random-rails-attribute-exceptions" class="link-to-tldr-page" target="_blank">Summary of &#8220;Fixing Random Rails Attribute Exceptions&#8221;</a> (via <a href="http://tldr.io" target="_blank">tldr.io</a>)      <ul>        <li style="margin-bottom: 10px; line-height: 130%;">There were some random exceptions raised when accessing model attributes</li>        <li style="margin-bottom: 10px; line-height: 130%;">The bug is fixed by using less concurrent MySQL connections (from 40 to 8).</li>      </ul>      </p></blockquote>
+
+
+<script async src="//tldr.io/embed/widget-embed.js" charset="utf-8"></script>
+
+
+<p>In the previous weeks I found in my Rails log that there were random exceptions when I was trying to access some attributes from current_user, like <code>current_user.id</code>, and I was pretty sure that user had logged in when accessing such attributes.</p>
 
 <p>All the exceptions were quite random. The statements which cased these exceptions worked for the most time. Here are some exception traces:</p>
 
