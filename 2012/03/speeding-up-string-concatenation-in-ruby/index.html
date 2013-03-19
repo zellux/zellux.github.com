@@ -89,8 +89,6 @@
 
 
 <article class="hentry " role="article">
-  <blockquote data-use-own-tldr="true" class="tldr-embed-widget"></blockquote>
-  <script async src="//tldr.io/embed/widget-embed.js" charset="utf-8"></script>
   
   <header>
     <h1 class="entry-title">
@@ -118,6 +116,10 @@ Speeding Up String Concatenation in Ruby
       </p>
     
   </header>
+
+
+  <blockquote data-use-own-tldr="true" class="tldr-embed-widget"></blockquote>
+  <script async src="//tldr.io/embed/widget-embed.js" charset="utf-8"></script>
 
 <div class="entry-content"><p>When concatenation large chunks of strings in Ruby, operator <code>&lt;&lt;</code> will be more efficient than <code>+</code>. This is because <code>+</code> creates immutable strings and introduces burden on garbage collector, while <code>&lt;&lt;</code> mutates the orinal string and thus do not create new objects.</p>
 </div>

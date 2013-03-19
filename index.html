@@ -118,6 +118,7 @@
     
   </header>
 
+
 <div class="entry-content"><p>In the previous weeks I found in my Rails log that there were random exceptions when I was trying to access some attributes from current_user, like <code>current_user.id</code>, and I was pretty sure that user had logged in when accessing such attributes.</p>
 
 <p>All the exceptions were quite random. The statements which cased these exceptions worked for the most time. Here are some exception traces:</p>
@@ -253,6 +254,7 @@
     
   </header>
 
+
 <div class="entry-content"><p>Before writing in Octopress, I was using Wordpress as blog platform. Wordpress provides Atom seed via /feed/, and after switching my blog platform to Octopress (the blog url is not changed), Atom seed is published through /atom.xml, which means subscribers to my Wordpress will not notified for future blog updates.</p>
 
 <p>I figured out two approaches to make them happy. One way is to redirect /feed/ requests to /atom.xml. Take nginx as an example, add the following lines to the site configuration:</p>
@@ -343,6 +345,7 @@
     
   </header>
 
+
 <div class="entry-content"><p>I just started learning C++ and occurred a bug related with container size comparison.</p>
 
 <p>The following code looks ok from Java or Ruby&#8217;s perspective:</p>
@@ -424,6 +427,7 @@
     
   </header>
 
+
 <div class="entry-content"><p>The famous Rails paginator
 <a href="https://github.com/amatsuda/kaminari/">Kaminari</a> provides some
 methods in query objects, which may be useful for customizing
@@ -488,6 +492,7 @@ views. They are not listed on the document, you may find them in
       </p>
     
   </header>
+
 
 <div class="entry-content"><h2>Problem</h2>
 
@@ -560,6 +565,7 @@ views. They are not listed on the document, you may find them in
     
   </header>
 
+
 <div class="entry-content"><h2>Problem 32.1-2</h2>
 
 <blockquote><p>Suppose that all characters in the pattern P are different. Show how to accelerate NAIVE-STRING-MATCHER to run in time O(n) on an n-character text T .</p></blockquote>
@@ -630,6 +636,7 @@ views. They are not listed on the document, you may find them in
     
   </header>
 
+
 <div class="entry-content"><p>The following code snippet works well for most browsers:</p>
 
 <figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
@@ -696,6 +703,7 @@ views. They are not listed on the document, you may find them in
     
   </header>
 
+
 <div class="entry-content"><p>Some clients and networking libraries may expect &#8216;Content-Length&#8217; in response headers when downloading files. However, this parameter is not provided in Rails send_file method. To add content size to the header, you may just add a line next to the send_file method:</p>
 
 <figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
@@ -761,6 +769,7 @@ views. They are not listed on the document, you may find them in
       </p>
     
   </header>
+
 
 <div class="entry-content"><h3>Stubbing instance methods</h3>
 
@@ -838,6 +847,7 @@ views. They are not listed on the document, you may find them in
       </p>
     
   </header>
+
 
 <div class="entry-content"><p>When concatenation large chunks of strings in Ruby, operator <code>&lt;&lt;</code> will be more efficient than <code>+</code>. This is because <code>+</code> creates immutable strings and introduces burden on garbage collector, while <code>&lt;&lt;</code> mutates the orinal string and thus do not create new objects.</p>
 </div>
