@@ -3,7 +3,7 @@
   <title><![CDATA[ZelluX's Dev Blog]]></title>
   <link href="http://blog.zellux.me/atom.xml" rel="self"/>
   <link href="http://blog.zellux.me/"/>
-  <updated>2013-03-19T20:22:00+08:00</updated>
+  <updated>2013-03-23T01:17:38+08:00</updated>
   <id>http://blog.zellux.me/</id>
   <author>
     <name><![CDATA[zellux]]></name>
@@ -11,6 +11,42 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[Slicing frReturn Object of ActiveRecord::Base#attributes]]></title>
+<link href="http://blog.zellux.me/2013/03/slicing-frreturn-object-of-activerecord-base-number-attributes/"/>
+<updated>2013-03-23T01:14:00+08:00</updated>
+<id>http://blog.zellux.me/2013/03/slicing-frreturn-object-of-activerecord-base-number-attributes</id>
+
+      <content type="html"><![CDATA[<p>The problem occurred when I tried to create another object with attributes of current object like:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">record</span> <span class="o">=</span> <span class="no">AnotherActiveRecord</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SomeActiveRecord</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="ss">:user_id</span><span class="p">,</span> <span class="ss">:item_id</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you may find out, <code>Base#attributes</code> here return a Hash with Strings as keys, so when you try to slice them with Symbols, it returns an empty Hash object. To get what you want, you can either use Strings as keys, like</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">record</span> <span class="o">=</span> <span class="no">AnotherActiveRecord</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SomeActiveRecord</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="s1">&#39;item_id&#39;</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or get another Hash object which is indifferent in String and Symbol as key objects:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">record</span> <span class="o">=</span> <span class="no">AnotherActiveRecord</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SomeActiveRecord</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">with_indifferent_access</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="ss">:user_id</span><span class="s1">&#39;, :item_id&#39;</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+<p><a rel="bookmark" href="http://blog.zellux.me/2013/03/slicing-frreturn-object-of-activerecord-base-number-attributes/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
     <entry>
       

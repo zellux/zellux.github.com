@@ -94,6 +94,79 @@
   <header>
     <h1 class="entry-title">
 
+<a href="/2013/03/slicing-frreturn-object-of-activerecord-base-number-attributes/">Slicing frReturn Object of ActiveRecord::Base#attributes</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-23T01:14:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2013</time>
+         &bull; <a rel="bookmark" href="/2013/03/slicing-frreturn-object-of-activerecord-base-number-attributes/">Permalink</a>
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>The problem occurred when I tried to create another object with attributes of current object like:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">record</span> <span class="o">=</span> <span class="no">AnotherActiveRecord</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SomeActiveRecord</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="ss">:user_id</span><span class="p">,</span> <span class="ss">:item_id</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you may find out, <code>Base#attributes</code> here return a Hash with Strings as keys, so when you try to slice them with Symbols, it returns an empty Hash object. To get what you want, you can either use Strings as keys, like</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">record</span> <span class="o">=</span> <span class="no">AnotherActiveRecord</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SomeActiveRecord</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="s1">&#39;item_id&#39;</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or get another Hash object which is indifferent in String and Symbol as key objects:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">record</span> <span class="o">=</span> <span class="no">AnotherActiveRecord</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SomeActiveRecord</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">with_indifferent_access</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="ss">:user_id</span><span class="s1">&#39;, :item_id&#39;</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+</div>
+
+  <footer>
+    
+    
+  </footer>
+
+
+    </article>
+  
+    
+
+
+
+
+
+
+
+
+
+
+    <article >
+      
+  <header>
+    <h1 class="entry-title">
+
 <a href="/2013/03/fixing-random-attribute-exception-in-rails/">Fixing Random Rails Attribute Exceptions</a>
 
 </h1>
@@ -798,58 +871,6 @@ views. They are not listed on the document, you may find them in
 <h3>let and let!</h3>
 
 <p>Variables defined by <code>let</code> is evaluated in a lazy way. Use <code>let!</code> to force the evaluation before each spec.</p>
-</div>
-
-  <footer>
-    
-    
-  </footer>
-
-
-    </article>
-  
-    
-
-
-
-
-
-
-
-
-
-
-    <article >
-      
-  <header>
-    <h1 class="entry-title">
-
-<a href="/2012/03/speeding-up-string-concatenation-in-ruby/">Speeding Up String Concatenation in Ruby</a>
-
-</h1>
-
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-30T16:31:00+08:00" pubdate data-updated="true">Mar 30<span>th</span>, 2012</time>
-         &bull; <a rel="bookmark" href="/2012/03/speeding-up-string-concatenation-in-ruby/">Permalink</a>
-      </p>
-    
-  </header>
-
-
-<div class="entry-content"><p>When concatenation large chunks of strings in Ruby, operator <code>&lt;&lt;</code> will be more efficient than <code>+</code>. This is because <code>+</code> creates immutable strings and introduces burden on garbage collector, while <code>&lt;&lt;</code> mutates the orinal string and thus do not create new objects.</p>
 </div>
 
   <footer>

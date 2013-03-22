@@ -94,6 +94,58 @@
   <header>
     <h1 class="entry-title">
 
+<a href="/2012/03/speeding-up-string-concatenation-in-ruby/">Speeding Up String Concatenation in Ruby</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-30T16:31:00+08:00" pubdate data-updated="true">Mar 30<span>th</span>, 2012</time>
+         &bull; <a rel="bookmark" href="/2012/03/speeding-up-string-concatenation-in-ruby/">Permalink</a>
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>When concatenation large chunks of strings in Ruby, operator <code>&lt;&lt;</code> will be more efficient than <code>+</code>. This is because <code>+</code> creates immutable strings and introduces burden on garbage collector, while <code>&lt;&lt;</code> mutates the orinal string and thus do not create new objects.</p>
+</div>
+
+  <footer>
+    
+    
+  </footer>
+
+
+    </article>
+  
+    
+
+
+
+
+
+
+
+
+
+
+    <article >
+      
+  <header>
+    <h1 class="entry-title">
+
 <a href="/2012/03/optimizing-page-rendering-speed-for-ipad-3/">Optimizing Page Rendering Speed for iPad 3</a>
 
 </h1>
