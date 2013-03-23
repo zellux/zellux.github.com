@@ -3,7 +3,7 @@
   <title><![CDATA[ZelluX's Dev Blog]]></title>
   <link href="http://blog.zellux.me/atom.xml" rel="self"/>
   <link href="http://blog.zellux.me/"/>
-  <updated>2013-03-23T01:17:38+08:00</updated>
+  <updated>2013-03-23T16:31:58+08:00</updated>
   <id>http://blog.zellux.me/</id>
   <author>
     <name><![CDATA[zellux]]></name>
@@ -18,10 +18,10 @@
 
 
 
-<title type="html"><![CDATA[Slicing frReturn Object of ActiveRecord::Base#attributes]]></title>
-<link href="http://blog.zellux.me/2013/03/slicing-frreturn-object-of-activerecord-base-number-attributes/"/>
+<title type="html"><![CDATA[Slicing Return Object of ActiveRecord::Base#attributes]]></title>
+<link href="http://blog.zellux.me/2013/03/slicing-return-object-of-activerecord-base-number-attributes/"/>
 <updated>2013-03-23T01:14:00+08:00</updated>
-<id>http://blog.zellux.me/2013/03/slicing-frreturn-object-of-activerecord-base-number-attributes</id>
+<id>http://blog.zellux.me/2013/03/slicing-return-object-of-activerecord-base-number-attributes</id>
 
       <content type="html"><![CDATA[<p>The problem occurred when I tried to create another object with attributes of current object like:</p>
 
@@ -45,7 +45,7 @@
 
 
 
-<p><a rel="bookmark" href="http://blog.zellux.me/2013/03/slicing-frreturn-object-of-activerecord-base-number-attributes/">&#9875; Permalink</a></p>]]></content>
+<p><a rel="bookmark" href="http://blog.zellux.me/2013/03/slicing-return-object-of-activerecord-base-number-attributes/">&#9875; Permalink</a></p>]]></content>
     </entry>
   
     <entry>
