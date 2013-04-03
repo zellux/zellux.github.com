@@ -94,6 +94,62 @@
   <header>
     <h1 class="entry-title">
 
+<a href="/2013/04/add-github-issues-to-your-things-inbox/">Add GitHub Issues to Your Things Inbox</a>
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-03T11:15:00+08:00" pubdate data-updated="true">Apr 3<span>rd</span>, 2013</time>
+         &bull; <a rel="bookmark" href="/2013/04/add-github-issues-to-your-things-inbox/">Permalink</a>
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I use <a href="http://culturedcode.com/things/">Things</a> to organise TODOs, and our team adopts GitHub private repositories as a platform to collaborate and issue tracking. When ever I want to see what next to do, I need to check both Things and GitHub issues.</p>
+
+<p>So I write a Chrome extension to help me copy GitHub issues to my Things inbox. After installation, it will add an &#8216;Add to Things&#8217; button in every GitHub issue page, near &#8216;Edit&#8217; button. A Things New To Do box will popup if you click the button, with issue title, url, and description within it.</p>
+
+<p>Since I still have some problem getting my Google Checkout account, you can download the extension on GitHub: <a href="https://github.com/zellux/github-issues-to-things">https://github.com/zellux/github-issues-to-things</a></p>
+</div>
+
+  <footer>
+    
+    
+  </footer>
+
+
+    </article>
+  
+    
+
+
+
+
+
+
+
+
+
+
+    <article >
+      
+  <header>
+    <h1 class="entry-title">
+
 <a href="/2013/03/slicing-return-object-of-activerecord-base-number-attributes/">Slicing Return Object of ActiveRecord::Base#attributes</a>
 
 </h1>
@@ -793,84 +849,6 @@ views. They are not listed on the document, you may find them in
 
 
 
-</div>
-
-  <footer>
-    
-    
-  </footer>
-
-
-    </article>
-  
-    
-
-
-
-
-
-
-
-
-
-
-    <article >
-      
-  <header>
-    <h1 class="entry-title">
-
-<a href="/2012/05/some-notes-on-rspec/">Some Notes on RSpec</a>
-
-</h1>
-
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-07T15:40:00+08:00" pubdate data-updated="true">May 7<span>th</span>, 2012</time>
-         &bull; <a rel="bookmark" href="/2012/05/some-notes-on-rspec/">Permalink</a>
-      </p>
-    
-  </header>
-
-
-<div class="entry-content"><h3>Stubbing instance methods</h3>
-
-<p>The method <code>any_instance</code> allows stubbing instance methods easily. For example, the following line will force calling Item#price to return 10 always:</p>
-
-<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Item</span><span class="o">.</span><span class="n">any_instance</span><span class="o">.</span><span class="n">stub</span><span class="p">(</span><span class="ss">:price</span><span class="p">)</span><span class="o">.</span><span class="n">and_return</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Stubbing in helper specs</h3>
-
-<p>Stubbing in helper specs is similar to stubbing in controller specs. Just remember to add <code>helper.</code> before every helper method call.</p>
-
-<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">it</span> <span class="s1">&#39;test current user&#39;</span> <span class="k">do</span>
-</span><span class='line'>  <span class="n">helper</span><span class="o">.</span><span class="n">stub</span><span class="p">(</span><span class="ss">:current_user</span><span class="p">)</span><span class="o">.</span><span class="n">and_return</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
-</span><span class='line'>  <span class="n">helper</span><span class="o">.</span><span class="n">user_avatar</span><span class="o">.</span><span class="n">should_not</span> <span class="n">be_empty</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>let and let!</h3>
-
-<p>Variables defined by <code>let</code> is evaluated in a lazy way. Use <code>let!</code> to force the evaluation before each spec.</p>
 </div>
 
   <footer>
