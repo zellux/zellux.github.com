@@ -1,48 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
+
   <title><![CDATA[ZelluX's Dev Blog]]></title>
   <link href="http://blog.zellux.me/atom.xml" rel="self"/>
   <link href="http://blog.zellux.me/"/>
-  <updated>2013-04-03T11:24:34+08:00</updated>
+  <updated>2013-04-14T21:06:37+08:00</updated>
   <id>http://blog.zellux.me/</id>
   <author>
     <name><![CDATA[zellux]]></name>
-    
+    <email><![CDATA[zellux@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Add GitHub Issues to Your Things Inbox]]></title>
-<link href="http://blog.zellux.me/2013/04/add-github-issues-to-your-things-inbox/"/>
-<updated>2013-04-03T11:15:00+08:00</updated>
-<id>http://blog.zellux.me/2013/04/add-github-issues-to-your-things-inbox</id>
-
-      <content type="html"><![CDATA[<p>I use <a href="http://culturedcode.com/things/">Things</a> to organise TODOs, and our team adopts GitHub private repositories as a platform to collaborate and issue tracking. When ever I want to see what next to do, I need to check both Things and GitHub issues.</p>
+  <entry>
+    <title type="html"><![CDATA[Add GitHub Issues to Your Things Inbox]]></title>
+    <link href="http://blog.zellux.me/2013/04/add-github-issues-to-your-things-inbox/"/>
+    <updated>2013-04-03T11:15:00+08:00</updated>
+    <id>http://blog.zellux.me/2013/04/add-github-issues-to-your-things-inbox</id>
+    <content type="html"><![CDATA[<p>I use <a href="http://culturedcode.com/things/">Things</a> to organise TODOs, and our team adopts GitHub private repositories as a platform to collaborate and issue tracking. When ever I want to see what next to do, I need to check both Things and GitHub issues.</p>
 
 <p>So I write a Chrome extension to help me copy GitHub issues to my Things inbox. After installation, it will add an &#8216;Add to Things&#8217; button in every GitHub issue page, near &#8216;Edit&#8217; button. A Things New To Do box will popup if you click the button, with issue title, url, and description within it.</p>
 
 <p>Since I still have some problem getting my Google Checkout account, you can download the extension on GitHub: <a href="https://github.com/zellux/github-issues-to-things">https://github.com/zellux/github-issues-to-things</a></p>
-<p><a rel="bookmark" href="http://blog.zellux.me/2013/04/add-github-issues-to-your-things-inbox/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Slicing Return Object of ActiveRecord::Base#attributes]]></title>
-<link href="http://blog.zellux.me/2013/03/slicing-return-object-of-activerecord-base-number-attributes/"/>
-<updated>2013-03-23T01:14:00+08:00</updated>
-<id>http://blog.zellux.me/2013/03/slicing-return-object-of-activerecord-base-number-attributes</id>
-
-      <content type="html"><![CDATA[<p>The problem occurred when I tried to create another object with attributes of current object like:</p>
+  <entry>
+    <title type="html"><![CDATA[Slicing Return Object of ActiveRecord::Base#attributes]]></title>
+    <link href="http://blog.zellux.me/2013/03/slicing-return-object-of-activerecord-base-number-attributes/"/>
+    <updated>2013-03-23T01:14:00+08:00</updated>
+    <id>http://blog.zellux.me/2013/03/slicing-return-object-of-activerecord-base-number-attributes</id>
+    <content type="html"><![CDATA[<p>The problem occurred when I tried to create another object with attributes of current object like:</p>
 
 <figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">record</span> <span class="o">=</span> <span class="no">AnotherActiveRecord</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SomeActiveRecord</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="ss">:user_id</span><span class="p">,</span> <span class="ss">:item_id</span><span class="p">))</span>
@@ -64,21 +53,15 @@
 
 
 
-<p><a rel="bookmark" href="http://blog.zellux.me/2013/03/slicing-return-object-of-activerecord-base-number-attributes/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Fixing Random Rails Attribute Exceptions]]></title>
-<link href="http://blog.zellux.me/2013/03/fixing-random-attribute-exception-in-rails/"/>
-<updated>2013-03-04T11:02:00+08:00</updated>
-<id>http://blog.zellux.me/2013/03/fixing-random-attribute-exception-in-rails</id>
-
-      <content type="html"><![CDATA[<p>In the previous weeks I found in my Rails log that there were random exceptions when I was trying to access some attributes from current_user, like <code>current_user.id</code>, and I was pretty sure that user had logged in when accessing such attributes.</p>
+  <entry>
+    <title type="html"><![CDATA[Fixing Random Rails Attribute Exceptions]]></title>
+    <link href="http://blog.zellux.me/2013/03/fixing-random-attribute-exception-in-rails/"/>
+    <updated>2013-03-04T11:02:00+08:00</updated>
+    <id>http://blog.zellux.me/2013/03/fixing-random-attribute-exception-in-rails</id>
+    <content type="html"><![CDATA[<p>In the previous weeks I found in my Rails log that there were random exceptions when I was trying to access some attributes from current_user, like <code>current_user.id</code>, and I was pretty sure that user had logged in when accessing such attributes.</p>
 
 <p>All the exceptions were quite random. The statements which cased these exceptions worked for the most time. Here are some exception traces:</p>
 
@@ -163,21 +146,15 @@
 <p>My previous configuration of unicorn and database created 8 unicorn worker processes, each maintaining 5 concurrent connections (5 is the default value) to MySQL, which means there were 40 concurrent connections to MySQL. I changed it to 4 processes, each with 2 MySQL connections. Since that similar exceptions have never occurred in the last week.</p>
 
 <p>This is my tedious log of how this bug is fixed. Hope it can help you.</p>
-<p><a rel="bookmark" href="http://blog.zellux.me/2013/03/fixing-random-attribute-exception-in-rails/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Multiple Feeds for Octopress]]></title>
-<link href="http://blog.zellux.me/2013/01/multiple-feeds-for-octopress/"/>
-<updated>2013-01-01T17:43:00+08:00</updated>
-<id>http://blog.zellux.me/2013/01/multiple-feeds-for-octopress</id>
-
-      <content type="html"><![CDATA[<p>Before writing in Octopress, I was using Wordpress as blog platform. Wordpress provides Atom seed via /feed/, and after switching my blog platform to Octopress (the blog url is not changed), Atom seed is published through /atom.xml, which means subscribers to my Wordpress will not notified for future blog updates.</p>
+  <entry>
+    <title type="html"><![CDATA[Multiple Feeds for Octopress]]></title>
+    <link href="http://blog.zellux.me/2013/01/multiple-feeds-for-octopress/"/>
+    <updated>2013-01-01T17:43:00+08:00</updated>
+    <id>http://blog.zellux.me/2013/01/multiple-feeds-for-octopress</id>
+    <content type="html"><![CDATA[<p>Before writing in Octopress, I was using Wordpress as blog platform. Wordpress provides Atom seed via /feed/, and after switching my blog platform to Octopress (the blog url is not changed), Atom seed is published through /atom.xml, which means subscribers to my Wordpress will not notified for future blog updates.</p>
 
 <p>I figured out two approaches to make them happy. One way is to redirect /feed/ requests to /atom.xml. Take nginx as an example, add the following lines to the site configuration:</p>
 
@@ -217,21 +194,15 @@
 
 
 <p>Now I can see my latest blog posts with old /feed/ url (Note that the blog mentioned here is <a href="http://blog.yxwang.me/">another one</a>) written in Chinese. Hope this trick can help you as well.</p>
-<p><a rel="bookmark" href="http://blog.zellux.me/2013/01/multiple-feeds-for-octopress/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Traps in Comparing Container Sizes]]></title>
-<link href="http://blog.zellux.me/2012/12/traps-in-comparing-container-sizes/"/>
-<updated>2012-12-06T15:28:00+08:00</updated>
-<id>http://blog.zellux.me/2012/12/traps-in-comparing-container-sizes</id>
-
-      <content type="html"><![CDATA[<p>I just started learning C++ and occurred a bug related with container size comparison.</p>
+  <entry>
+    <title type="html"><![CDATA[Traps in Comparing Container Sizes]]></title>
+    <link href="http://blog.zellux.me/2012/12/traps-in-comparing-container-sizes/"/>
+    <updated>2012-12-06T15:28:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/12/traps-in-comparing-container-sizes</id>
+    <content type="html"><![CDATA[<p>I just started learning C++ and occurred a bug related with container size comparison.</p>
 
 <p>The following code looks ok from Java or Ruby&#8217;s perspective:</p>
 
@@ -262,21 +233,15 @@
 
 
 
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/12/traps-in-comparing-container-sizes/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Useful Methods in Kaminari]]></title>
-<link href="http://blog.zellux.me/2012/09/useful-methods-in-kaminari/"/>
-<updated>2012-09-09T23:18:00+08:00</updated>
-<id>http://blog.zellux.me/2012/09/useful-methods-in-kaminari</id>
-
-      <content type="html"><![CDATA[<p>The famous Rails paginator
+  <entry>
+    <title type="html"><![CDATA[Useful Methods in Kaminari]]></title>
+    <link href="http://blog.zellux.me/2012/09/useful-methods-in-kaminari/"/>
+    <updated>2012-09-09T23:18:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/09/useful-methods-in-kaminari</id>
+    <content type="html"><![CDATA[<p>The famous Rails paginator
 <a href="https://github.com/amatsuda/kaminari/">Kaminari</a> provides some
 methods in query objects, which may be useful for customizing
 views. They are not listed on the document, you may find them in
@@ -291,21 +256,15 @@ views. They are not listed on the document, you may find them in
 
 
 <p>Method names are intuitive enough to show what the method returns.</p>
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/09/useful-methods-in-kaminari/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Successor with Delete]]></title>
-<link href="http://blog.zellux.me/2012/08/notes-of-algorithms-course-week-1/"/>
-<updated>2012-08-30T10:05:00+08:00</updated>
-<id>http://blog.zellux.me/2012/08/notes-of-algorithms-course-week-1</id>
-
-      <content type="html"><![CDATA[<h2>Problem</h2>
+  <entry>
+    <title type="html"><![CDATA[Successor with Delete]]></title>
+    <link href="http://blog.zellux.me/2012/08/notes-of-algorithms-course-week-1/"/>
+    <updated>2012-08-30T10:05:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/08/notes-of-algorithms-course-week-1</id>
+    <content type="html"><![CDATA[<h2>Problem</h2>
 
 <p>Given a set of N integers S={0,1,&#8230;,N−1} and a sequence of requests of the following form:</p>
 
@@ -326,21 +285,15 @@ views. They are not listed on the document, you may find them in
 <p>The results of finding the successor of x are saved in union-find sets, that is, when finding the successor of x, we simply return the root of the set containing x. When removing x from S, we need to make successor of removed numbers consequent to x and before x as that of x + 1. This is exactly what union function needs to do. To remove x from S, we simply merge the set containing x to the set containing x + 1 (append as its child).</p>
 
 <p>This will work for both removing and finding except that in worst cases it does not run in logarithmic time, since it does not consider set weight when merging two sets. To opmitize this, our merging function will work in a way similar to weighted quick union, except that if the numbers in the larger set are smaller than that in the smaller one, we need to change the root of unioned set to the root of the larger set. This can be done by changing the original root of the two sets. Then we make ensure logarithmic time in worst case.</p>
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/08/notes-of-algorithms-course-week-1/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Solutions to CLRS Chapter 32.1]]></title>
-<link href="http://blog.zellux.me/2012/08/solution-to-clrs-chapter-32/"/>
-<updated>2012-08-22T22:22:00+08:00</updated>
-<id>http://blog.zellux.me/2012/08/solution-to-clrs-chapter-32</id>
-
-      <content type="html"><![CDATA[<h2>Problem 32.1-2</h2>
+  <entry>
+    <title type="html"><![CDATA[Solutions to CLRS Chapter 32.1]]></title>
+    <link href="http://blog.zellux.me/2012/08/solution-to-clrs-chapter-32/"/>
+    <updated>2012-08-22T22:22:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/08/solution-to-clrs-chapter-32</id>
+    <content type="html"><![CDATA[<h2>Problem 32.1-2</h2>
 
 <blockquote><p>Suppose that all characters in the pattern P are different. Show how to accelerate NAIVE-STRING-MATCHER to run in time O(n) on an n-character text T .</p></blockquote>
 
@@ -360,21 +313,15 @@ views. They are not listed on the document, you may find them in
 
 
 <p>F(T<sub>i</sub>, P<sub>j</sub>) is true, if and only if any of the above statements is true. The problem can thus be sovled in O(n ^ 2) in a bottom-up way.</p>
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/08/solution-to-clrs-chapter-32/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Order of Formats in response_to Does Matter]]></title>
-<link href="http://blog.zellux.me/2012/08/order-of-different-formats-in-response-to-does-matter/"/>
-<updated>2012-08-17T19:48:00+08:00</updated>
-<id>http://blog.zellux.me/2012/08/order-of-different-formats-in-response-to-does-matter</id>
-
-      <content type="html"><![CDATA[<p>The following code snippet works well for most browsers:</p>
+  <entry>
+    <title type="html"><![CDATA[Order of Formats in response_to Does Matter]]></title>
+    <link href="http://blog.zellux.me/2012/08/order-of-different-formats-in-response-to-does-matter/"/>
+    <updated>2012-08-17T19:48:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/08/order-of-different-formats-in-response-to-does-matter</id>
+    <content type="html"><![CDATA[<p>The following code snippet works well for most browsers:</p>
 
 <figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -390,21 +337,15 @@ views. They are not listed on the document, you may find them in
 <p>But some browsers, especially embedded webkit components, may set ContentType to <code>*/*</code> in request headers. In this case, they will get JSON data instead of HTML if they do not explicitly specify .html format in URL.</p>
 
 <p>So as long as it is not intended, putting format.html before format.json will always be a better choice.</p>
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/08/order-of-different-formats-in-response-to-does-matter/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Adding Content-Length to send_file Headers]]></title>
-<link href="http://blog.zellux.me/2012/06/adding-missing-content-length-to-send-file-headers/"/>
-<updated>2012-06-18T19:52:00+08:00</updated>
-<id>http://blog.zellux.me/2012/06/adding-missing-content-length-to-send-file-headers</id>
-
-      <content type="html"><![CDATA[<p>Some clients and networking libraries may expect &#8216;Content-Length&#8217; in response headers when downloading files. However, this parameter is not provided in Rails send_file method. To add content size to the header, you may just add a line next to the send_file method:</p>
+  <entry>
+    <title type="html"><![CDATA[Adding Content-Length to send_file Headers]]></title>
+    <link href="http://blog.zellux.me/2012/06/adding-missing-content-length-to-send-file-headers/"/>
+    <updated>2012-06-18T19:52:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/06/adding-missing-content-length-to-send-file-headers</id>
+    <content type="html"><![CDATA[<p>Some clients and networking libraries may expect &#8216;Content-Length&#8217; in response headers when downloading files. However, this parameter is not provided in Rails send_file method. To add content size to the header, you may just add a line next to the send_file method:</p>
 
 <figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -420,21 +361,15 @@ views. They are not listed on the document, you may find them in
 
 
 
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/06/adding-missing-content-length-to-send-file-headers/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Some Notes on RSpec]]></title>
-<link href="http://blog.zellux.me/2012/05/some-notes-on-rspec/"/>
-<updated>2012-05-07T15:40:00+08:00</updated>
-<id>http://blog.zellux.me/2012/05/some-notes-on-rspec</id>
-
-      <content type="html"><![CDATA[<h3>Stubbing instance methods</h3>
+  <entry>
+    <title type="html"><![CDATA[Some Notes on RSpec]]></title>
+    <link href="http://blog.zellux.me/2012/05/some-notes-on-rspec/"/>
+    <updated>2012-05-07T15:40:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/05/some-notes-on-rspec</id>
+    <content type="html"><![CDATA[<h3>Stubbing instance methods</h3>
 
 <p>The method <code>any_instance</code> allows stubbing instance methods easily. For example, the following line will force calling Item#price to return 10 always:</p>
 
@@ -461,57 +396,39 @@ views. They are not listed on the document, you may find them in
 <h3>let and let!</h3>
 
 <p>Variables defined by <code>let</code> is evaluated in a lazy way. Use <code>let!</code> to force the evaluation before each spec.</p>
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/05/some-notes-on-rspec/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Speeding Up String Concatenation in Ruby]]></title>
-<link href="http://blog.zellux.me/2012/03/speeding-up-string-concatenation-in-ruby/"/>
-<updated>2012-03-30T16:31:00+08:00</updated>
-<id>http://blog.zellux.me/2012/03/speeding-up-string-concatenation-in-ruby</id>
-
-      <content type="html"><![CDATA[<p>When concatenation large chunks of strings in Ruby, operator <code>&lt;&lt;</code> will be more efficient than <code>+</code>. This is because <code>+</code> creates immutable strings and introduces burden on garbage collector, while <code>&lt;&lt;</code> mutates the orinal string and thus do not create new objects.</p>
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/03/speeding-up-string-concatenation-in-ruby/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+  <entry>
+    <title type="html"><![CDATA[Speeding Up String Concatenation in Ruby]]></title>
+    <link href="http://blog.zellux.me/2012/03/speeding-up-string-concatenation-in-ruby/"/>
+    <updated>2012-03-30T16:31:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/03/speeding-up-string-concatenation-in-ruby</id>
+    <content type="html"><![CDATA[<p>When concatenation large chunks of strings in Ruby, operator <code>&lt;&lt;</code> will be more efficient than <code>+</code>. This is because <code>+</code> creates immutable strings and introduces burden on garbage collector, while <code>&lt;&lt;</code> mutates the orinal string and thus do not create new objects.</p>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Optimizing Page Rendering Speed for iPad 3]]></title>
-<link href="http://blog.zellux.me/2012/03/optimizing-page-rendering-speed-for-ipad-3/"/>
-<updated>2012-03-27T18:16:00+08:00</updated>
-<id>http://blog.zellux.me/2012/03/optimizing-page-rendering-speed-for-ipad-3</id>
-
-      <content type="html"><![CDATA[<p>When developing online book store in <a href="http://tangcha.tc">Tangcha</a>, we were confronted with slow web page rendering issue on iPad 3, and finally found out two optimizations to make it much faster. The approaches were also posted on <a href="http://stackoverflow.com/a/10721238/111896">Stack Overflow</a>.</p>
+  <entry>
+    <title type="html"><![CDATA[Optimizing Page Rendering Speed for iPad 3]]></title>
+    <link href="http://blog.zellux.me/2012/03/optimizing-page-rendering-speed-for-ipad-3/"/>
+    <updated>2012-03-27T18:16:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/03/optimizing-page-rendering-speed-for-ipad-3</id>
+    <content type="html"><![CDATA[<p>When developing online book store in <a href="http://tangcha.tc">Tangcha</a>, we were confronted with slow web page rendering issue on iPad 3, and finally found out two optimizations to make it much faster. The approaches were also posted on <a href="http://stackoverflow.com/a/10721238/111896">Stack Overflow</a>.</p>
 
 <ol>
 <li><p>Avoid using CSS3 effects. We used a lot of CSS3 shadows in previous versions, which slowed down rendering process on iPad 3 a lot. After replacing those shadow effects with background images, performance got greatly improved on iPad 3.</p></li>
 <li><p>Optimize Javascript. Our application has some scrollable components, whenever user scrolls the component some Javascript code will be executed to do some loading work, like loading images in a lazy way. On iPad 3 scrolling will delay for 500ms when user tries to scroll from one page to the next. Then we found some unnecessary image loading work were performed in the scrolling callback, after removing them, the scrolling performance is acceptable.</p></li>
 </ol>
 
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/03/optimizing-page-rendering-speed-for-ipad-3/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Finding out the encoding of a MySQL Database]]></title>
-<link href="http://blog.zellux.me/2012/03/finding-out-the-encoding-of-a-mysql-database/"/>
-<updated>2012-03-23T09:45:00+08:00</updated>
-<id>http://blog.zellux.me/2012/03/finding-out-the-encoding-of-a-mysql-database</id>
-
-      <content type="html"><![CDATA[<p>Find out the encoding of a MySQL database:</p>
+  <entry>
+    <title type="html"><![CDATA[Finding out the encoding of a MySQL Database]]></title>
+    <link href="http://blog.zellux.me/2012/03/finding-out-the-encoding-of-a-mysql-database/"/>
+    <updated>2012-03-23T09:45:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/03/finding-out-the-encoding-of-a-mysql-database</id>
+    <content type="html"><![CDATA[<p>Find out the encoding of a MySQL database:</p>
 
 <figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='plain'><span class='line'>SHOW VARIABLES LIKE 'character_set_%';</span></code></pre></td></tr></table></div></figure>
@@ -524,40 +441,28 @@ views. They are not listed on the document, you may find them in
 
 
 
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/03/finding-out-the-encoding-of-a-mysql-database/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Concurrency vs Parallellism]]></title>
-<link href="http://blog.zellux.me/2012/03/concurrency-vs-parallellism/"/>
-<updated>2012-03-23T00:19:00+08:00</updated>
-<id>http://blog.zellux.me/2012/03/concurrency-vs-parallellism</id>
-
-      <content type="html"><![CDATA[<p>Just found a simple and accurate definition in Go Course Day 2:</p>
+  <entry>
+    <title type="html"><![CDATA[Concurrency vs Parallellism]]></title>
+    <link href="http://blog.zellux.me/2012/03/concurrency-vs-parallellism/"/>
+    <updated>2012-03-23T00:19:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/03/concurrency-vs-parallellism</id>
+    <content type="html"><![CDATA[<p>Just found a simple and accurate definition in Go Course Day 2:</p>
 
 <blockquote><p>Concurrency is a property of the problem. Parallel execution is when the concurrent parts are executed at the same time on separate processes.</p></blockquote>
 
 <p> I cannot find original slides on <a href="http://golang.org">golang.org</a> though.</p>
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/03/concurrency-vs-parallellism/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[A Pitfall in CoffeeScript Ranges]]></title>
-<link href="http://blog.zellux.me/2012/03/a-pitfall-in-coffeescript-ranges/"/>
-<updated>2012-03-06T15:38:00+08:00</updated>
-<id>http://blog.zellux.me/2012/03/a-pitfall-in-coffeescript-ranges</id>
-
-      <content type="html"><![CDATA[<p>Ranges in CoffeeScript look similar to Ruby ranges, except for one big divergence. When used in a reversed order, ranges in CoffeeScript will return an array of revered items, while in Ruby an empty sequence will be generated:</p>
+  <entry>
+    <title type="html"><![CDATA[A Pitfall in CoffeeScript Ranges]]></title>
+    <link href="http://blog.zellux.me/2012/03/a-pitfall-in-coffeescript-ranges/"/>
+    <updated>2012-03-06T15:38:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/03/a-pitfall-in-coffeescript-ranges</id>
+    <content type="html"><![CDATA[<p>Ranges in CoffeeScript look similar to Ruby ranges, except for one big divergence. When used in a reversed order, ranges in CoffeeScript will return an array of revered items, while in Ruby an empty sequence will be generated:</p>
 
 <figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -572,28 +477,22 @@ views. They are not listed on the document, you may find them in
 
 
 <p>I am not sure why it is designed in this way. Just be careful of this pitfall when dealing with ranges in CoffeeScript.</p>
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/03/a-pitfall-in-coffeescript-ranges/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
-    <entry>
-      
-
-
-
-
-<title type="html"><![CDATA[Fixing ImageMagick crash issues on Mac OS X]]></title>
-<link href="http://blog.zellux.me/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/"/>
-<updated>2012-02-23T16:04:00+08:00</updated>
-<id>http://blog.zellux.me/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x</id>
-
-      <content type="html"><![CDATA[<p>ImageMagick may be prone to crash on Mac OS X, and it can be avoided by disabling OpenMP when compile the library:</p>
+  <entry>
+    <title type="html"><![CDATA[Fixing ImageMagick crash issues on Mac OS X]]></title>
+    <link href="http://blog.zellux.me/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/"/>
+    <updated>2012-02-23T16:04:00+08:00</updated>
+    <id>http://blog.zellux.me/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x</id>
+    <content type="html"><![CDATA[<p>ImageMagick may be prone to crash on Mac OS X, and it can be avoided by disabling OpenMP when compile the library:</p>
 
 <figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='plain'><span class='line'>brew install -f imagemagick --disable-openmp</span></code></pre></td></tr></table></div></figure>
 
 
 
-<p><a rel="bookmark" href="http://blog.zellux.me/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/">&#9875; Permalink</a></p>]]></content>
-    </entry>
+]]></content>
+  </entry>
   
 </feed>
