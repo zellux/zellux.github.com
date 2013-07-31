@@ -7,19 +7,19 @@
 	<meta name="author" content="zellux">
 
 	
-	<meta name="description" content="Apr 3rd, 2013
+	<meta name="description" content="Jul 31st, 2013
 		
 
 
-	Tools
+	English
 
 
 
 		
 	
-	Add GitHub Issues to Your Things Inbox
+	Quizlet Flashcards for Vocabulary Builder
 	
-		I use Things to organise TODOs, and our team &hellip;">
+		I wrote a script to extract words and &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,6 +105,50 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-31T19:52:00+08:00" data-updated="true" itemprop="datePublished">Jul 31<span>st</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/english/'>English</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2013/07/quizlet-flashcards-for-vocabulary-builder/" itemprop="url">Quizlet Flashcards for Vocabulary Builder</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I wrote a <a href="https://gist.github.com/zellux/6121288">script</a> to extract words and explanations from <a href="http://www.amazon.com/Merriam-Websters-Vocabulary-Builder-ebook/dp/B003IS768K">Merriam-Webster&#8217;s Vocabulary Builder (Kindle Edition)</a>. With these data I have made some flashcards on <a href="http://quizlet.com/">Quizlet</a> to make memorising easier.</p>
+
+<p>Here is the list, and it will keep updated as I read through the book:</p>
+
+<ul>
+<li><a href="http://quizlet.com/24841916/vocabulary-builder-unit-1-flash-cards/">Unit 1</a></li>
+<li><a href="http://quizlet.com/24841932/vocabulary-builder-unit-2-flash-cards/">Unit 2</a></li>
+<li><a href="http://quizlet.com/24841932/vocabulary-builder-unit-3-flash-cards/">Unit 3</a></li>
+</ul>
+
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -660,56 +704,6 @@ views. They are not listed on the document, you may find them in
 <p>But some browsers, especially embedded webkit components, may set ContentType to <code>*/*</code> in request headers. In this case, they will get JSON data instead of HTML if they do not explicitly specify .html format in URL.</p>
 
 <p>So as long as it is not intended, putting format.html before format.json will always be a better choice.</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-06-18T19:52:00+08:00" data-updated="true" itemprop="datePublished">Jun 18<span>th</span>, 2012</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/rails/'>Rails</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/2012/06/adding-missing-content-length-to-send-file-headers/" itemprop="url">Adding Content-Length to Send_file Headers</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>Some clients and networking libraries may expect &#8216;Content-Length&#8217; in response headers when downloading files. However, this parameter is not provided in Rails send_file method. To add content size to the header, you may just add a line next to the send_file method:</p>
-
-<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">download</span>
-</span><span class='line'>    <span class="n">filename</span> <span class="o">=</span> <span class="n">params</span><span class="o">[</span><span class="ss">:name</span><span class="o">]</span>
-</span><span class='line'>    <span class="n">send_file</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">headers</span><span class="o">[</span><span class="s1">&#39;Content-Length&#39;</span><span class="o">]</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
 
 		
 		

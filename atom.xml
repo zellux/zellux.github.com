@@ -4,7 +4,7 @@
   <title><![CDATA[ZelluX's Dev Blog]]></title>
   <link href="http://blog.zellux.me/atom.xml" rel="self"/>
   <link href="http://blog.zellux.me/"/>
-  <updated>2013-04-23T10:50:38+08:00</updated>
+  <updated>2013-07-31T19:57:11+08:00</updated>
   <id>http://blog.zellux.me/</id>
   <author>
     <name><![CDATA[zellux]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Quizlet flashcards for Vocabulary Builder]]></title>
+    <link href="http://blog.zellux.me/2013/07/quizlet-flashcards-for-vocabulary-builder/"/>
+    <updated>2013-07-31T19:52:00+08:00</updated>
+    <id>http://blog.zellux.me/2013/07/quizlet-flashcards-for-vocabulary-builder</id>
+    <content type="html"><![CDATA[<p>I wrote a <a href="https://gist.github.com/zellux/6121288">script</a> to extract words and explanations from <a href="http://www.amazon.com/Merriam-Websters-Vocabulary-Builder-ebook/dp/B003IS768K">Merriam-Webster&#8217;s Vocabulary Builder (Kindle Edition)</a>. With these data I have made some flashcards on <a href="http://quizlet.com/">Quizlet</a> to make memorising easier.</p>
+
+<p>Here is the list, and it will keep updated as I read through the book:</p>
+
+<ul>
+<li><a href="http://quizlet.com/24841916/vocabulary-builder-unit-1-flash-cards/">Unit 1</a></li>
+<li><a href="http://quizlet.com/24841932/vocabulary-builder-unit-2-flash-cards/">Unit 2</a></li>
+<li><a href="http://quizlet.com/24841932/vocabulary-builder-unit-3-flash-cards/">Unit 3</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Add GitHub Issues to Your Things Inbox]]></title>
