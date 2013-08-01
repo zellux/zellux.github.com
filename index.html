@@ -7,19 +7,19 @@
 	<meta name="author" content="zellux">
 
 	
-	<meta name="description" content="Jul 31st, 2013
+	<meta name="description" content="Aug 1st, 2013
 		
 
 
-	English
+	Ruby
 
 
 
 		
 	
-	Quizlet Flashcards for Vocabulary Builder
+	Fixing Bundler Not Installed Error
 	
-		I wrote a script to extract words and &hellip;">
+		I&#8217;m using rvm and recently I&#8217;ve &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,6 +105,47 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-01T15:07:00+08:00" data-updated="true" itemprop="datePublished">Aug 1<span>st</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2013/08/fixing-bundler-not-installed-error/" itemprop="url">Fixing Bundler Not Installed Error</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I&#8217;m using rvm and recently I&#8217;ve upgraded Ruby from 1.9.2 to 1.9.3. Then I find bundle not working, even if I can see it installed as shown by <code>gem list</code>, when I run <code>bundle install</code> it still says</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>ERROR: Gem bundler is not installed, run `gem install bundler` first.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The problem lies in the environment variable <code>PATH</code>. To fix this, first check if gemset is configured right by running <code>rvm gemset info</code>, and choose the right gemset by running <code>rvm use ruby-1.9.3-p448@gemsetname</code>. Then make sure that path to your rvm binaries is put before your other binaries. In my case it would be appending a line <code>export PATH=/Users/wyx/.rvm/gems/ruby-1.9.3-p448@global/bin:${PATH}</code> to my <code>.zshrc</code>.</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
@@ -654,56 +695,6 @@ views. They are not listed on the document, you may find them in
 
 
 <p>F(T<sub>i</sub>, P<sub>j</sub>) is true, if and only if any of the above statements is true. The problem can thus be sovled in O(n ^ 2) in a bottom-up way.</p>
-
-		
-		
-	</div>
-
-</article>
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-17T19:48:00+08:00" data-updated="true" itemprop="datePublished">Aug 17<span>th</span>, 2012</time></div>
-		<div class="tags">
-
-
-	<a class='category' href='/blog/categories/rails/'>Rails</a>
-
-
-</div>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/2012/08/order-of-different-formats-in-response-to-does-matter/" itemprop="url">Order of Formats in Response_to Does Matter</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>The following code snippet works well for most browsers:</p>
-
-<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">respond_to</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
-</span><span class='line'>  <span class="nb">format</span><span class="o">.</span><span class="n">json</span> <span class="p">{</span> <span class="n">blah</span> <span class="n">blah</span> <span class="p">}</span>
-</span><span class='line'>  <span class="nb">format</span><span class="o">.</span><span class="n">html</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>But some browsers, especially embedded webkit components, may set ContentType to <code>*/*</code> in request headers. In this case, they will get JSON data instead of HTML if they do not explicitly specify .html format in URL.</p>
-
-<p>So as long as it is not intended, putting format.html before format.json will always be a better choice.</p>
 
 		
 		

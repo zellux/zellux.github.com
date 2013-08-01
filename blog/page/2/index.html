@@ -7,7 +7,7 @@
 	<meta name="author" content="zellux">
 
 	
-	<meta name="description" content="Jun 18th, 2012
+	<meta name="description" content="Aug 17th, 2012
 		
 
 
@@ -17,9 +17,9 @@
 
 		
 	
-	Adding Content-Length to Send_file Headers
+	Order of Formats in Response_to Does Matter
 	
-		Some clients and networking libraries &hellip;">
+		The following code snippet works well &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -105,6 +105,56 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-17T19:48:00+08:00" data-updated="true" itemprop="datePublished">Aug 17<span>th</span>, 2012</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2012/08/order-of-different-formats-in-response-to-does-matter/" itemprop="url">Order of Formats in Response_to Does Matter</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>The following code snippet works well for most browsers:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">respond_to</span> <span class="k">do</span> <span class="o">|</span><span class="nb">format</span><span class="o">|</span>
+</span><span class='line'>  <span class="nb">format</span><span class="o">.</span><span class="n">json</span> <span class="p">{</span> <span class="n">blah</span> <span class="n">blah</span> <span class="p">}</span>
+</span><span class='line'>  <span class="nb">format</span><span class="o">.</span><span class="n">html</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>But some browsers, especially embedded webkit components, may set ContentType to <code>*/*</code> in request headers. In this case, they will get JSON data instead of HTML if they do not explicitly specify .html format in URL.</p>
+
+<p>So as long as it is not intended, putting format.html before format.json will always be a better choice.</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
