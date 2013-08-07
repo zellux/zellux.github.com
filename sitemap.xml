@@ -2,100 +2,104 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://blog.zellux.me/2012/02/fixing-imagemagick-crash-issues-on-mac-os-x/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2012/03/a-pitfall-in-coffeescript-ranges/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2012/03/concurrency-vs-parallellism/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2012/03/finding-out-the-encoding-of-a-mysql-database/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2012/03/optimizing-page-rendering-speed-for-ipad-3/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2012/03/speeding-up-string-concatenation-in-ruby/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2012/05/some-notes-on-rspec/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.zellux.me/2012/06/adding-missing-content-length-to-send-file-headers/
         </loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.zellux.me/2012/08/order-of-different-formats-in-response-to-does-matter/
         </loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2012/08/solution-to-clrs-chapter-32/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2012/08/notes-of-algorithms-course-week-1/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2012/09/useful-methods-in-kaminari/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2012/12/traps-in-comparing-container-sizes/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2013/01/multiple-feeds-for-octopress/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2013/03/fixing-random-attribute-exception-in-rails/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://blog.zellux.me/2013/03/slicing-return-object-of-activerecord-base-number-attributes/
         </loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2013/04/add-github-issues-to-your-things-inbox/</loc>
-        <lastmod>2013-04-14T21:08:56+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2013/07/quizlet-flashcards-for-vocabulary-builder/</loc>
-        <lastmod>2013-07-31T20:01:48+08:00</lastmod>
+        <lastmod>2013-08-07T20:19:01+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/2013/08/fixing-bundler-not-installed-error/</loc>
-        <lastmod>2013-08-01T15:14:02+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/about/</loc>
-        <lastmod>2013-04-14T20:50:01+08:00</lastmod>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/archives/</loc>
-        <lastmod>2013-08-01T15:14:02+08:00</lastmod>
+        <lastmod>2013-08-07T20:19:01+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/blog/archives/</loc>
-        <lastmod>2013-08-01T15:14:02+08:00</lastmod>
+        <lastmod>2013-08-07T20:19:01+08:00</lastmod>
     </url>
     <url>
         <loc>http://blog.zellux.me/</loc>
-        <lastmod>2013-08-01T15:14:02+08:00</lastmod>
+        <lastmod>2013-08-07T20:19:01+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://blog.zellux.me/robots.txt</loc>
+        <lastmod>2013-08-01T15:20:35+08:00</lastmod>
     </url>
 </urlset>

@@ -1,147 +1,97 @@
 
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<title>Fixing bundler not installed error - ZelluX's Dev Blog</title>
-	<meta name="author" content="zellux">
+  <meta charset="utf-8">
+  <title>Fixing bundler not installed error - ZelluX's Dev Blog</title>
+  <meta name="author" content="zellux">
 
-	
-	<meta name="description" content="Fixing Bundler Not Installed Error
-	I&#8217;m using rvm and recently I&#8217;ve upgraded Ruby from 1.9.2 to 1.9.3. Then I find bundle not working, &hellip;">
-	
+  
+  <meta name="description" content="I&#8217;m using rvm and recently I&#8217;ve upgraded Ruby from 1.9.2 to 1.9.3. Then I find bundle not working, even if I can see it installed as &hellip;">
+  
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="http://feeds.uri.lv/zellux" rel="alternate" title="ZelluX's Dev Blog" type="application/atom+xml">
-	
-	<link rel="canonical" href="http://blog.zellux.me/2013/08/fixing-bundler-not-installed-error/">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
-	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+  
+  <link rel="canonical" href="http://blog.zellux.me/2013/08/fixing-bundler-not-installed-error">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="http://feeds.uri.lv/zellux" rel="alternate" title="ZelluX's Dev Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=Monda" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25551121-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">ZelluX's Dev Blog</a></h1>
+  
+    <h2>Everyday coding notes</h2>
+  
+</hgroup>
 
-<body>
-	<div class="container">
-		<div class="left-col">
-			<div class="intrude-less">
-			<header id="header" class="inner"><div class="profilepic">
-	<script src="/javascripts/md5.js"></script>
-	<script type="text/javascript">
-		document.write("<img src='http://www.gravatar.com/avatar/" + MD5("zellux@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
-	</script>
-</div>
-<h1><a href="/">ZelluX's Dev Blog</a></h1>
-<p class="subtitle">Everyday coding notes</p>
-<nav id="main-nav"><ul class="main-navigation">
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.uri.lv/zellux" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:blog.zellux.me" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
 </ul>
-</nav>
-<nav id="sub-nav">
-	<div class="social">
-		
-		
-		
-		<a class="twitter" href="http://twitter.com/zellux" title="Twitter">Twitter</a>
-		
-		
-		<a class="github" href="https://github.com/zellux" title="GitHub">GitHub</a>
-		
-		
-		
-		
-		
-		
-		<a class="rss" href="http://feeds.uri.lv/zellux" title="RSS">RSS</a>
-		
-	</div>
-</nav>
 
-</header>				
-			</div>
-		</div>	
-		<div class="mid-col">
-			
-				
-<div id="banner" class="inner">
-	<div class="container">
-		<ul class="feed"></ul>
-	</div>
-	<small><a href="http://twitter.com/zellux">zellux</a> @ <a href="http://twitter.com">Twitter</a></small>
-	<div class="loading">Loading...</div>
-</div>
-<script src="/javascripts/twitter.js"></script>
-<script type="text/javascript">
-	(function($){
-		$('#banner').getTwitterFeed('zellux', 5, false);
-	})(jQuery);
-</script>
-
-			
-			<div class="mid-col-container">
-				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name">Fixing Bundler Not Installed Error</h1>
-	<div class="entry-content" itemprop="articleBody"><p>I&#8217;m using rvm and recently I&#8217;ve upgraded Ruby from 1.9.2 to 1.9.3. Then I find bundle not working, even if I can see it installed as shown by <code>gem list</code>, when I run <code>bundle install</code> it still says</p>
+</nav>
+  <div id="main">
+    <div id="content">
+      <p>I&#8217;m using rvm and recently I&#8217;ve upgraded Ruby from 1.9.2 to 1.9.3. Then I find bundle not working, even if I can see it installed as shown by <code>gem list</code>, when I run <code>bundle install</code> it still says</p>
 
 <figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='plain'><span class='line'>ERROR: Gem bundler is not installed, run `gem install bundler` first.</span></code></pre></td></tr></table></div></figure>
 
 
 <p>The problem lies in the environment variable <code>PATH</code>. To fix this, first check if gemset is configured right by running <code>rvm gemset info</code>, and choose the right gemset by running <code>rvm use ruby-1.9.3-p448@gemsetname</code>. Then make sure that path to your rvm binaries is put before your other binaries. In my case it would be appending a line <code>export PATH=/Users/wyx/.rvm/gems/ruby-1.9.3-p448@global/bin:${PATH}</code> to my <code>.zshrc</code>.</p>
-</div>
 
-</article>
-
-	<div class="share">
-	<div class="addthis_toolbox addthis_default_style ">
-	
-	
-	<a class="addthis_button_tweet"></a>
-	
-	
-	<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-	
-	<a class="addthis_counter addthis_pill_style"></a>
-	</div>
-  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
-</div>
-
-
-
-<section id="comment">
-    <h1 class="title">Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
-</div>
-			</div>
-			<footer id="footer" class="inner"><p>
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
   Copyright &copy; 2013 - zellux -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
-Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
-			<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
-
+</footer>
+  
 
 <script type="text/javascript">
       var disqus_shortname = '50a23bb7';
@@ -161,22 +111,34 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
 
 
 
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-25551121-4']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
 
 
 
 
-		</div>
-	</div>
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
 </body>
 </html>
