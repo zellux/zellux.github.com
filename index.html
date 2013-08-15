@@ -1,119 +1,730 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>ZelluX's Dev Blog</title>
-  <meta name="author" content="zellux">
+	<meta charset="utf-8">
+	<title>ZelluX's Dev Blog</title>
+	<meta name="author" content="zellux">
 
-  
-  <meta name="description" content="{% assign index = true %}
-  {% for post in paginator.posts %}
-  {% assign content = post.content %}
-    
-      {% include article.html &hellip;">
-  
+	
+	<meta name="description" content="Aug 1st, 2013
+		
+
+
+	Ruby
+
+
+
+		
+	
+	Fixing Bundler Not Installed Error
+	
+		I&#8217;m using rvm and recently I&#8217;ve &hellip;">
+	
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
-  <link rel="canonical" href="http://blog.zellux.me">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="http://feeds.uri.lv/zellux" rel="alternate" title="ZelluX's Dev Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+	<link href="http://feeds.uri.lv/zellux" rel="alternate" title="ZelluX's Dev Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://blog.zellux.me/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-25551121-4']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Monda" rel="stylesheet" type="text/css">
 
 </head>
 
-<body   class="collapse-sidebar sidebar-footer" >
-  <header role="banner"><hgroup>
-  <h1><a href="/">ZelluX's Dev Blog</a></h1>
-  
-    <h2>Everyday coding notes</h2>
-  
-</hgroup>
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="http://feeds.uri.lv/zellux" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:blog.zellux.me" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
+<body>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		document.write("<img src='http://www.gravatar.com/avatar/" + MD5("zellux@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+	</script>
+</div>
+<h1><a href="/">ZelluX's Dev Blog</a></h1>
+<p class="subtitle">Everyday coding notes</p>
+<nav id="main-nav"><ul class="main-navigation">
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/zellux" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/zellux" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		<a class="rss" href="http://feeds.uri.lv/zellux" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/zellux">zellux</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
+</div>
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('zellux', 5, false);
+	})(jQuery);
+</script>
+
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-08-01T15:07:00+08:00" data-updated="true" itemprop="datePublished">Aug 1<span>st</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2013/08/fixing-bundler-not-installed-error/" itemprop="url">Fixing Bundler Not Installed Error</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I&#8217;m using rvm and recently I&#8217;ve upgraded Ruby from 1.9.2 to 1.9.3. Then I find bundle not working, even if I can see it installed as shown by <code>gem list</code>, when I run <code>bundle install</code> it still says</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>ERROR: Gem bundler is not installed, run `gem install bundler` first.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The problem lies in the environment variable <code>PATH</code>. To fix this, first check if gemset is configured right by running <code>rvm gemset info</code>, and choose the right gemset by running <code>rvm use ruby-1.9.3-p448@gemsetname</code>. Then make sure that path to your rvm binaries is put before your other binaries. In my case it would be appending a line <code>export PATH=/Users/wyx/.rvm/gems/ruby-1.9.3-p448@global/bin:${PATH}</code> to my <code>.zshrc</code>.</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-07-31T19:52:00+08:00" data-updated="true" itemprop="datePublished">Jul 31<span>st</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/english/'>English</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2013/07/quizlet-flashcards-for-vocabulary-builder/" itemprop="url">Quizlet Flashcards for Vocabulary Builder</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I wrote a <a href="https://gist.github.com/zellux/6121288">script</a> to extract words and explanations from <a href="http://www.amazon.com/Merriam-Websters-Vocabulary-Builder-ebook/dp/B003IS768K">Merriam-Webster&#8217;s Vocabulary Builder (Kindle Edition)</a>. With these data I have made some flashcards on <a href="http://quizlet.com/">Quizlet</a> to make memorising easier.</p>
+
+<p>Here is the list, and it will keep updated as I read through the book:</p>
+
+<ul>
+<li><a href="http://quizlet.com/24841916/vocabulary-builder-unit-1-flash-cards/">Unit 1</a></li>
+<li><a href="http://quizlet.com/24841932/vocabulary-builder-unit-2-flash-cards/">Unit 2</a></li>
+<li><a href="http://quizlet.com/24841972/vocabulary-builder-unit-3-flash-cards/">Unit 3</a></li>
 </ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  {% assign index = true %}
-  {% for post in paginator.posts %}
-  {% assign content = post.content %}
-    <article>
-      {% include article.html %}
-    </article>
-  {% endfor %}
-  <div class="pagination">
-    {% if paginator.next_page %}
-      <a class="prev" href="{{paginator.next_page}}">&larr; Older</a>
-    {% endif %}
-    <a href="/blog/archives">Blog Archives</a>
-    {% if paginator.previous_page %}
-    <a class="next" href="{{paginator.previous_page}}">Newer &rarr;</a>
-    {% endif %}
-  </div>
-</div>
-<aside class="sidebar">
-  {% if site.blog_index_asides.size %}
-    {% include_array blog_index_asides %}
-  {% else %}
-    {% include_array default_asides %}
-  {% endif %}
-</aside>
 
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-03T11:15:00+08:00" data-updated="true" itemprop="datePublished">Apr 3<span>rd</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/tools/'>Tools</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2013/04/add-github-issues-to-your-things-inbox/" itemprop="url">Add GitHub Issues to Your Things Inbox</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I use <a href="http://culturedcode.com/things/">Things</a> to organise TODOs, and our team adopts GitHub private repositories as a platform to collaborate and issue tracking. Having two issue tracking applications brings some trouble. Whenever I want to see what next to do, I need to check both Things and GitHub issues.</p>
+
+<p>So I write a Chrome extension to help me copy GitHub issues to my Things inbox. After installation, it will add an &#8216;Add to Things&#8217; button in every GitHub issue page, near &#8216;Edit&#8217; button. A Things New To Do box will popup if you click the button, with issue title, url, and description within it.</p>
+
+<p>Since I still have some problem getting my Google Checkout account, you can download the extension on GitHub: <a href="https://github.com/zellux/github-issues-to-things">https://github.com/zellux/github-issues-to-things</a></p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-23T01:14:00+08:00" data-updated="true" itemprop="datePublished">Mar 23<span>rd</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2013/03/slicing-return-object-of-activerecord-base-number-attributes/" itemprop="url">Slicing Return Object of ActiveRecord::Base#attributes</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>The problem occurred when I tried to create another object with attributes of current object like:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">record</span> <span class="o">=</span> <span class="no">AnotherActiveRecord</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SomeActiveRecord</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="ss">:user_id</span><span class="p">,</span> <span class="ss">:item_id</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>As you may find out, <code>Base#attributes</code> here return a Hash with Strings as keys, so when you try to slice them with Symbols, it returns an empty Hash object. To get what you want, you can either use Strings as keys, like</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">record</span> <span class="o">=</span> <span class="no">AnotherActiveRecord</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SomeActiveRecord</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="s1">&#39;user_id&#39;</span><span class="p">,</span> <span class="s1">&#39;item_id&#39;</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>or get another Hash object which is indifferent in String and Symbol as key objects:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">record</span> <span class="o">=</span> <span class="no">AnotherActiveRecord</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="no">SomeActiveRecord</span><span class="o">.</span><span class="n">first</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">with_indifferent_access</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="ss">:user_id</span><span class="s1">&#39;, :item_id&#39;</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-04T11:02:00+08:00" data-updated="true" itemprop="datePublished">Mar 4<span>th</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2013/03/fixing-random-attribute-exception-in-rails/" itemprop="url">Fixing Random Rails Attribute Exceptions</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>In the previous weeks I found in my Rails log that there were random exceptions when I was trying to access some attributes from current_user, like <code>current_user.id</code>, and I was pretty sure that user had logged in when accessing such attributes.</p>
+
+<p>All the exceptions were quite random. The statements which cased these exceptions worked for the most time. Here are some exception traces:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>
+</span><span class='line'>NoMethodError (undefined method `to_sym' for nil:NilClass):
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/sanitization.rb:60:in `block in expand_hash_conditions_for_aggregates'
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/sanitization.rb:59:in `each'
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/sanitization.rb:59:in `expand_hash_conditions_for_aggregates'
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/relation/query_methods.rb:326:in `build_where'
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/relation/query_methods.rb:136:in `where'
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/querying.rb:9:in `where'
+</span><span class='line'>  orm_adapter (0.4.0) lib/orm_adapter/adapters/active_record.rb:17:in `get'
+</span><span class='line'>  devise (2.1.2) lib/devise/models/authenticatable.rb:183:in `serialize_from_session'
+</span><span class='line'>  devise (2.1.2) lib/devise/rails/warden_compat.rb:29:in `deserialize'
+</span><span class='line'>  warden (1.2.1) lib/warden/session_serializer.rb:35:in `fetch'
+</span><span class='line'>  warden (1.2.1) lib/warden/proxy.rb:212:in `user'
+</span><span class='line'>  warden (1.2.1) lib/warden/proxy.rb:318:in `_perform_authentication'
+</span><span class='line'>  warden (1.2.1) lib/warden/proxy.rb:127:in `authenticate!'
+</span><span class='line'>  devise (2.1.2) lib/devise/controllers/helpers.rb:48:in `authenticate_user!'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/callbacks.rb:451:in `_run__2120724129680932349__process_action__409155903620940597__callbacks'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/callbacks.rb:405:in `__run_callback'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/callbacks.rb:81:in `run_callbacks'
+</span><span class='line'>  actionpack (3.2.11) lib/abstract_controller/callbacks.rb:17:in `process_action'
+</span><span class='line'>  actionpack (3.2.11) lib/action_controller/metal/rescue.rb:29:in `process_action'
+</span><span class='line'>  actionpack (3.2.11) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/notifications.rb:123:in `block in instrument'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+</span><span class='line'>  activesupport (3.2.11) lib/active_support/notifications.rb:123:in `instrument'
+</span><span class='line'>  actionpack (3.2.11) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+</span><span class='line'>  actionpack (3.2.11) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+</span><span class='line'>  activerecord (3.2.11) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+</span><span class='line'>  ……</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>ActiveRecord::UnknownPrimaryKey (Unknown primary key for table users in model User.):
+</span><span class='line'>  app/concerns/xxx.rb:15:in `xxxxxx'
+</span><span class='line'>  app/controllers/items_controller.rb:37:in `xxxxxx'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The Rails application is running on Debian 6.0.2 x86_64, powered by unicorn 4.1.1, MySQL 5.1 and nginx 1.0.12.</p>
+
+<p>At first I thought the problem was related with old version of <a href="https://github.com/plataformatec/devise">devise</a>, but after upgrading it to the latest stable version, the problem still existed. And I also tried several other approaches, but none of them worked.</p>
+
+<p>One day I found in the log that occasionally it took a SQL SELECT statement 800ms to get result from a table with less than  100 entries. Then I realised MySQL was overloaded.</p>
+
+<p>My previous configuration of unicorn and database created 8 unicorn worker processes, each maintaining 5 concurrent connections (5 is the default value) to MySQL, which means there were 40 concurrent connections to MySQL. I changed it to 4 processes, each with 2 MySQL connections. Since that similar exceptions have never occurred in the last week.</p>
+
+<p>This is my tedious log of how this bug is fixed. Hope it can help you.</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-01-01T17:43:00+08:00" data-updated="true" itemprop="datePublished">Jan 1<span>st</span>, 2013</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/octopress/'>Octopress</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2013/01/multiple-feeds-for-octopress/" itemprop="url">Multiple Feeds for Octopress</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>Before writing in Octopress, I was using Wordpress as blog platform. Wordpress provides Atom seed via /feed/, and after switching my blog platform to Octopress (the blog url is not changed), Atom seed is published through /atom.xml, which means subscribers to my Wordpress will not notified for future blog updates.</p>
+
+<p>I figured out two approaches to make them happy. One way is to redirect /feed/ requests to /atom.xml. Take nginx as an example, add the following lines to the site configuration:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>location = /feed/ {
+</span><span class='line'>    rewrite ^(.*)$ http://blog.yxwang.me/atom.xml;
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Meanwhile if <a href="http://httpd.apache.org/docs/2.2/howto/htaccess.html">.htaccess</a> is supported on your server you can also define redirection with it.</p>
+
+<p>Recently I switched to another static web service, neither .htaccess nor nginx configuration is allowed. I have to find new way to make /feed/ provides Atom. Here is one simple way to do it, by adding two lines to the end of :generate task, the script will save a clone of atom.xml to /feed/index.html:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">desc</span> <span class="s2">&quot;Generate jekyll site&quot;</span>
+</span><span class='line'><span class="n">task</span> <span class="ss">:generate</span> <span class="k">do</span>
+</span><span class='line'>  <span class="k">raise</span> <span class="s2">&quot;### You haven&#39;t set anything up yet. First run `rake install` to set up an Octopress theme.&quot;</span> <span class="k">unless</span> <span class="no">File</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="n">source_dir</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;## Generating Site with Jekyll&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;compass compile --css-dir </span><span class="si">#{</span><span class="n">source_dir</span><span class="si">}</span><span class="s2">/stylesheets&quot;</span>
+</span><span class='line'>  <span class="no">Rake</span><span class="o">::</span><span class="no">Task</span><span class="o">[</span><span class="s1">&#39;minify_and_combine&#39;</span><span class="o">].</span><span class="n">execute</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;jekyll&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;mkdir -p </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/feed&quot;</span>
+</span><span class='line'>  <span class="nb">system</span> <span class="s2">&quot;cp </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/atom.xml </span><span class="si">#{</span><span class="n">public_dir</span><span class="si">}</span><span class="s2">/feed/index.html&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now I can see my latest blog posts with old /feed/ url (Note that the blog mentioned here is <a href="http://blog.yxwang.me/">another one</a>) written in Chinese. Hope this trick can help you as well.</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-06T15:28:00+08:00" data-updated="true" itemprop="datePublished">Dec 6<span>th</span>, 2012</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/c-/'>C++</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2012/12/traps-in-comparing-container-sizes/" itemprop="url">Traps in Comparing Container Sizes</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>I just started learning C++ and occurred a bug related with container size comparison.</p>
+
+<p>The following code looks ok from Java or Ruby&#8217;s perspective:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="k">while</span> <span class="p">(</span><span class="n">front</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="n">back</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">back</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="o">*</span><span class="n">front</span><span class="p">.</span><span class="n">rbegin</span><span class="p">());</span>
+</span><span class='line'>    <span class="n">front</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="o">--</span><span class="n">front</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>However, there is a critical bug in this code. <code>size()</code> method returns a value in <code>size_type</code>, which is an unsigned integer. If front.size() is smaller than back.size(), the minus will underflow and result in a very large value, thus making the while loop condition true.</p>
+
+<p>Knowing the reason, it is easy to correct this loop condition as follows:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="k">while</span> <span class="p">(</span><span class="n">front</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="n">back</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">back</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="o">*</span><span class="n">front</span><span class="p">.</span><span class="n">rbegin</span><span class="p">());</span>
+</span><span class='line'>    <span class="n">front</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="o">--</span><span class="n">front</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-09-09T23:18:00+08:00" data-updated="true" itemprop="datePublished">Sep 9<span>th</span>, 2012</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2012/09/useful-methods-in-kaminari/" itemprop="url">Useful Methods in Kaminari</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>The famous Rails paginator
+<a href="https://github.com/amatsuda/kaminari/">Kaminari</a> provides some
+methods in query objects, which may be useful for customizing
+views. They are not listed on the document, you may find them in
+<a href="https://github.com/amatsuda/kaminari/blob/master/lib/kaminari/models/page_scope_methods.rb">lib/kaminari/models/page_scope_methods.rb</a>:</p>
+
+<ul>
+<li>total_pages (alias num_pages)</li>
+<li>current_page</li>
+<li>first_page?</li>
+<li>last_page?</li>
+</ul>
+
+
+<p>Method names are intuitive enough to show what the method returns.</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-30T10:05:00+08:00" data-updated="true" itemprop="datePublished">Aug 30<span>th</span>, 2012</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/algorithms/'>Algorithms</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2012/08/notes-of-algorithms-course-week-1/" itemprop="url">Successor With Delete</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h2>Problem</h2>
+
+<p>Given a set of N integers S={0,1,&#8230;,N−1} and a sequence of requests of the following form:</p>
+
+<ul>
+<li>Remove x from S</li>
+<li>Find the successor of x: the smallest y in S such that y≥x.</li>
+</ul>
+
+
+<p>design a data type so that all operations (except construction) should take logarithmic time or better.</p>
+
+<h2>Solution</h2>
+
+<p>This is a problem taken from the interview questions in union-find set on <a href="https://class.coursera.org/algs4partI-2012-001/quiz/attempt?quiz_id=89">Coursea Algorithms Course</a>.</p>
+
+<p>It would be much harder if posted to the interviewee without context of union-find set. Fortunately we now known it can be solved with union-find set.</p>
+
+<p>The results of finding the successor of x are saved in union-find sets, that is, when finding the successor of x, we simply return the root of the set containing x. When removing x from S, we need to make successor of removed numbers consequent to x and before x as that of x + 1. This is exactly what union function needs to do. To remove x from S, we simply merge the set containing x to the set containing x + 1 (append as its child).</p>
+
+<p>This will work for both removing and finding except that in worst cases it does not run in logarithmic time, since it does not consider set weight when merging two sets. To opmitize this, our merging function will work in a way similar to weighted quick union, except that if the numbers in the larger set are smaller than that in the smaller one, we need to change the root of unioned set to the root of the larger set. This can be done by changing the original root of the two sets. Then we make ensure logarithmic time in worst case.</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-22T22:22:00+08:00" data-updated="true" itemprop="datePublished">Aug 22<span>nd</span>, 2012</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/algorithms/'>Algorithms</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/2012/08/solution-to-clrs-chapter-32/" itemprop="url">Solutions to CLRS Chapter 32.1</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<h2>Problem 32.1-2</h2>
+
+<blockquote><p>Suppose that all characters in the pattern P are different. Show how to accelerate NAIVE-STRING-MATCHER to run in time O(n) on an n-character text T .</p></blockquote>
+
+<p>When T[i] and P[j] mismatches in NAIVE-STRING-MATCHER, we can skip all characters before T[i] and begin new matching from T[i + 1] with P[1].</p>
+
+<h2>Problem 32.1-4</h2>
+
+<blockquote><p>  Suppose we allow the pattern P to contain occurrences of a gap character ◇ that can match an arbitrary string of characters (even one of zero length). Note that the gap character may occur an arbitrary number of times in the pattern but not at all in the text. Give a polynomial-time algorithm to determine whether such a pattern P occurs in a given text T , and analyze the running time of your algorithm.</p></blockquote>
+
+<p>We can solve this problem using dynamic programming. Assume we have function F(T<sub>i</sub>, P<sub>j</sub>), which defines whether the subpattern P<sub>j</sub> matches T<sub>i</sub>, and its value can be deducted from three sub-problems:</p>
+
+<ol>
+<li>P[j] == ◇ AND F(T<sub>i-1</sub>, P<sub>j</sub>)</li>
+<li>P[j] == ◇ AND F(T<sub>i</sub>, P<sub>j-1</sub>)</li>
+<li>F(T<sub>i-1</sub>, P<sub>j-1</sub>)</li>
+</ol>
+
+
+<p>F(T<sub>i</sub>, P<sub>j</sub>) is true, if and only if any of the above statements is true. The problem can thus be sovled in O(n ^ 2) in a bottom-up way.</p>
+
+		
+		
+	</div>
+
+</article>
+
+</div>
+<nav id="pagenavi">
+    
+    
+        <a href="/blog/page/2/" class="next">Next</a>
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+			</div>
+			<footer id="footer" class="inner"><p>
   Copyright &copy; 2013 - zellux -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
-</footer>
-  
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
 
 <script type="text/javascript">
       var disqus_shortname = '50a23bb7';
@@ -130,34 +741,22 @@
 
 
 
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-25551121-4']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 
 
 
 
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
+		</div>
+	</div>
 </body>
 </html>
