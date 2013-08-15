@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: C++ - ZelluX's Dev Blog</title>
+  <title>Traps in std::string with null characters - ZelluX's Dev Blog</title>
   <meta name="author" content="zellux">
 
   
-  <meta name="description" content="Category: C++">
+  <meta name="description" content="In most cases std::string can handle null characters in it well, except when mixing with C-style strings. When working on 6.824 Lab 3 I found a bug &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://blog.zellux.meblog/categories/c-">
+  <link rel="canonical" href="http://blog.zellux.me/2013/08/traps-in-std-string-with-null-characters">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="http://feeds.uri.lv/zellux" rel="alternate" title="ZelluX's Dev Blog" type="application/atom+xml">
@@ -75,43 +75,7 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div id="blog-archives" class="category">
-
-
-
-  
-  <h2>2013</h2>
-
-<article>
-  
-<h1><a href="/2013/08/traps-in-std-string-with-null-characters/">Traps in std::string with null characters</a></h1>
-<time datetime="2013-08-16T00:04:00+08:00" pubdate><span class='month'>Aug</span> <span class='day'>16</span> <span class='year'>2013</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/c-/'>C++</a></span>
-</footer>
-
-
-</article>
-
-
-
-  
-  <h2>2012</h2>
-
-<article>
-  
-<h1><a href="/2012/12/traps-in-comparing-container-sizes/">Traps in Comparing Container Sizes</a></h1>
-<time datetime="2012-12-06T15:28:00+08:00" pubdate><span class='month'>Dec</span> <span class='day'>06</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/c-/'>C++</a></span>
-</footer>
-
-
-</article>
-
-</div>
+      <p>In most cases std::string can handle null characters in it well, except when mixing with C-style strings. When working on 6.824 Lab 3 I found a bug caused by converting a C-style buffer to std::string. The buffer may contain null characters, so if no buffer size is given to std::string constructor, it will stops at first null char of the buffer. In this case, the constructor <code>std::string(const char* s, size_t n)</code> should be used.</p>
 
     </div>
   </div>
@@ -127,7 +91,10 @@
       var disqus_shortname = '50a23bb7';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://blog.zellux.me/2013/08/traps-in-std-string-with-null-characters/';
+        var disqus_url = 'http://blog.zellux.me/2013/08/traps-in-std-string-with-null-characters/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -4,7 +4,7 @@
   <title><![CDATA[ZelluX's Dev Blog]]></title>
   <link href="http://blog.zellux.me/atom.xml" rel="self"/>
   <link href="http://blog.zellux.me/"/>
-  <updated>2013-08-16T00:03:04+08:00</updated>
+  <updated>2013-08-16T00:18:05+08:00</updated>
   <id>http://blog.zellux.me/</id>
   <author>
     <name><![CDATA[zellux]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Traps in std::string with null characters]]></title>
+    <link href="http://blog.zellux.me/2013/08/traps-in-std-string-with-null-characters/"/>
+    <updated>2013-08-16T00:04:00+08:00</updated>
+    <id>http://blog.zellux.me/2013/08/traps-in-std-string-with-null-characters</id>
+    <content type="html"><![CDATA[<p>In most cases std::string can handle null characters in it well, except when mixing with C-style strings. When working on 6.824 Lab 3 I found a bug caused by converting a C-style buffer to std::string. The buffer may contain null characters, so if no buffer size is given to std::string constructor, it will stops at first null char of the buffer. In this case, the constructor <code>std::string(const char* s, size_t n)</code> should be used.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Fixing bundler not installed error]]></title>
