@@ -117,7 +117,7 @@ Remove x from S &hellip;">
 
 <p>It would be much harder if asked without context of union-find set. Fortunately we have a hint that it is related with union-find set.</p>
 
-<p>Assume we already have successors kept in a tree-like data structure, with root[i] points to the successor of i. The key observation here is that removing a number x from the set is quite analogous to joining two union-find sets: we only need to change root[x] to root[x + 1]. Note that this will also change successors of numbers whose successors were x. After that, the invariance that root[i] points to the successor of i still holds.</p>
+<p>Assume we already have successors kept in a tree-like data structure, with root[i] pointing to the successor of i. The key observation here is that removing a number x from the set is quite analogous to joining two union-find sets: we only need to change root[x] to root[x + 1]. Note that this will also change successors of numbers whose successors were x. After that, the invariance that root[i] points to the successor of i still holds.</p>
 
 <p>We cannot direct apply weight quick union here, because it may changes root[x + 1] to root[x], possibly making successor of x + 1 a number smaller than x + 1. But we can exploit path compression, and make worst case time complexity within O(N + M log N).</p>
 </div>
